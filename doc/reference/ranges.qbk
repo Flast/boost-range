@@ -1,0 +1,15 @@
+[/
+    Copyright 2010 Neil Groves
+    Copyright 2011 Akira Takahashi
+    Distributed under the Boost Software License, Version 1.0.
+    (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+/]
+[section:ranges Provided Ranges]
+
+[include ranges/single.qbk]
+[include ranges/iteration.qbk]
+[include ranges/directory_range.qbk]
+[include ranges/recursive_directory_range.qbk]
+
+[endsect]
+
