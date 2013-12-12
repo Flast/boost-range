@@ -1,15 +1,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>Chapter&#160;1.&#160;Range 2.0</title>
+<title>Chapter&#160;1.&#160;Range Extension 0.1</title>
 <link rel="stylesheet" href="../../../../doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<link rel="home" href="index.html" title="Chapter&#160;1.&#160;Range 2.0">
-<link rel="next" href="range/introduction.html" title="Introduction">
+<link rel="home" href="index.html" title="Chapter&#160;1.&#160;Range Extension 0.1">
+<link rel="next" href="range_extension/reference.html" title="Reference">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
-<td valign="top"><img alt="Boost C++ Libraries" width="277" height="86" src="../../../../boost.png"></td>
+<td valign="top"><img alt="rangeextension" width="277" height="86" src="../boost-proposed-alpha-variants.png"></td>
 <td align="center"><a href="../../../../index.html">Home</a></td>
 <td align="center"><a href="../../../../libs/libraries.htm">Libraries</a></td>
 <td align="center"><a href="http://www.boost.org/users/people.html">People</a></td>
@@ -17,21 +17,18 @@
 <td align="center"><a href="../../../../more/index.htm">More</a></td>
 </tr></table>
 <hr>
-<div class="spirit-nav"><a accesskey="n" href="range/introduction.html"><img src="../../../../doc/src/images/next.png" alt="Next"></a></div>
+<div class="spirit-nav"><a accesskey="n" href="range_extension/reference.html"><img src="../../../../doc/src/images/next.png" alt="Next"></a></div>
 <div class="chapter">
 <div class="titlepage"><div>
 <div><h2 class="title">
-<a name="range"></a>Chapter&#160;1.&#160;Range 2.0</h2></div>
+<a name="range_extension"></a>Chapter&#160;1.&#160;Range Extension 0.1</h2></div>
 <div><div class="author"><h3 class="author">
-<span class="firstname">Thorsten</span> <span class="surname">Ottosen</span>
+<span class="firstname">Akira</span> <span class="surname">Takahashi</span>
 </h3></div></div>
-<div><div class="author"><h3 class="author">
-<span class="firstname">Neil</span> <span class="surname">Groves</span>
-</h3></div></div>
-<div><p class="copyright">Copyright &#169; 2003-2010 Thorsten Ottosen,
-      Neil Groves</p></div>
+<div><p class="copyright">Copyright &#169; 2005-2007 Shunsuke Sogame</p></div>
+<div><p class="copyright">Copyright &#169; 2011 Akira Takahashi</p></div>
 <div><div class="legalnotice">
-<a name="range.legal"></a><p>
+<a name="range_extension.legal"></a><p>
         Distributed under the Boost Software License, Version 1.0. (See accompanying
         file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt" target="_top">http://www.boost.org/LICENSE_1_0.txt</a>)
       </p>
@@ -40,117 +37,86 @@
 <div class="toc">
 <p><b>Table of Contents</b></p>
 <dl>
-<dt><span class="section"><a href="range/introduction.html">Introduction</a></span></dt>
-<dt><span class="section"><a href="range/concepts.html">Range Concepts</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference.html">Reference</a></span></dt>
 <dd><dl>
-<dt><span class="section"><a href="range/concepts/overview.html">Overview</a></span></dt>
-<dt><span class="section"><a href="range/concepts/single_pass_range.html">Single Pass Range</a></span></dt>
-<dt><span class="section"><a href="range/concepts/forward_range.html">Forward Range</a></span></dt>
-<dt><span class="section"><a href="range/concepts/bidirectional_range.html">Bidirectional Range</a></span></dt>
-<dt><span class="section"><a href="range/concepts/random_access_range.html">Random Access Range</a></span></dt>
-<dt><span class="section"><a href="range/concepts/concept_checking.html">Concept Checking</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/overview.html">Overview</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/concept_implementation.html">Range
+      concept implementation</a></span></dt>
+<dd><dl>
+<dt><span class="section"><a href="range_extension/reference/concept_implementation/synopsis.html">Synopsis</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/concept_implementation/semantics.html">Semantics</a></span></dt>
 </dl></dd>
-<dt><span class="section"><a href="range/reference.html">Reference</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors.html">Range Adaptors</a></span></dt>
 <dd><dl>
-<dt><span class="section"><a href="range/reference/overview.html">Overview</a></span></dt>
-<dt><span class="section"><a href="range/reference/concept_implementation.html">Range concept
-      implementation</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/reference/concept_implementation/synopsis.html">Synopsis</a></span></dt>
-<dt><span class="section"><a href="range/reference/concept_implementation/semantics.html">Semantics</a></span></dt>
-</dl></dd>
-<dt><span class="section"><a href="range/reference/adaptors.html">Range Adaptors</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/reference/adaptors/introduction.html">Introduction
+<dt><span class="section"><a href="range_extension/reference/adaptors/introduction.html">Introduction
         and motivation</a></span></dt>
-<dt><span class="section"><a href="range/reference/adaptors/general_requirements.html">General
+<dt><span class="section"><a href="range_extension/reference/adaptors/general_requirements.html">General
         Requirements</a></span></dt>
-<dt><span class="section"><a href="range/reference/adaptors/reference.html">Reference</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/reference.html">Reference</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/range_extension.html">Range
+        Extension</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/regular_extension.html">Regular
+        Extension</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/algorithms.html">Range
+        Algorithms</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/algorithm_extension.html">Algorithm
+        Extension</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/ranges.html">Provided
+        Ranges</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/range_access.html">Range
+        Access</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/range_utilities.html">Range
+        Utilities</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/utilities.html">Utilities</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/adaptors/extending.html">Extending
+        the library</a></span></dt>
 </dl></dd>
-<dt><span class="section"><a href="range/reference/algorithms.html">Range Algorithms</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/reference/algorithms/introduction.html">Introduction
-        and motivation</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/mutating.html">Mutating algorithms</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/non_mutating.html">Non-mutating
-        algorithms</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/set.html">Set algorithms</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/heap.html">Heap algorithms</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/permutation.html">Permutation
-        algorithms</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/new.html">New algorithms</a></span></dt>
-<dt><span class="section"><a href="range/reference/algorithms/numeric.html">Numeric algorithms</a></span></dt>
+<dt><span class="section"><a href="range_extension/reference/design_rationale.html">Design Rationale</a></span></dt>
+<dd><dl><dt><span class="section"><a href="range_extension/reference/design_rationale/regular_op.html">Regular
+        Operator</a></span></dt></dl></dd>
+<dt><span class="section"><a href="range_extension/reference/acknowledgements.html">Acknowledments</a></span></dt>
 </dl></dd>
-<dt><span class="section"><a href="range/reference/ranges.html">Provided Ranges</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/reference/ranges/any_range.html">any_range</a></span></dt>
-<dt><span class="section"><a href="range/reference/ranges/counting_range.html">counting_range</a></span></dt>
-<dt><span class="section"><a href="range/reference/ranges/istream_range.html">istream_range</a></span></dt>
-<dt><span class="section"><a href="range/reference/ranges/irange.html">irange</a></span></dt>
-</dl></dd>
-<dt><span class="section"><a href="range/reference/utilities.html">Utilities</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/reference/utilities/iterator_range.html">Class <code class="computeroutput"><span class="identifier">iterator_range</span></code></a></span></dt>
-<dt><span class="section"><a href="range/reference/utilities/sub_range.html">Class <code class="computeroutput"><span class="identifier">sub_range</span></code></a></span></dt>
-<dt><span class="section"><a href="range/reference/utilities/join.html">Function join</a></span></dt>
-</dl></dd>
-<dt><span class="section"><a href="range/reference/extending.html">Extending the library</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/reference/extending/method_1.html">Method 1: provide
-        member functions and nested types</a></span></dt>
-<dt><span class="section"><a href="range/reference/extending/method_2.html">Method 2: provide
-        free-standing functions and specialize metafunctions</a></span></dt>
-<dt><span class="section"><a href="range/reference/extending/method_3.html">Method 3: provide
-        range adaptor implementations</a></span></dt>
-</dl></dd>
-</dl></dd>
-<dt><span class="section"><a href="range/style_guide.html">Terminology and style guidelines</a></span></dt>
-<dt><span class="section"><a href="range/headers.html">Library Headers</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/headers/general.html">General</a></span></dt>
-<dt><span class="section"><a href="range/headers/adaptors.html">Adaptors</a></span></dt>
-<dt><span class="section"><a href="range/headers/algorithm.html">Algorithm</a></span></dt>
-<dt><span class="section"><a href="range/headers/algorithm_ext.html">Algorithm Extensions</a></span></dt>
-</dl></dd>
-<dt><span class="section"><a href="range/examples.html">Examples</a></span></dt>
-<dt><span class="section"><a href="range/mfc_atl.html">MFC/ATL (courtesy of Shunsuke Sogame)</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/mfc_atl/requirements.html">Requirements</a></span></dt>
-<dt><span class="section"><a href="range/mfc_atl/mfc_ranges.html">MFC Ranges</a></span></dt>
-<dt><span class="section"><a href="range/mfc_atl/atl_ranges.html">ATL Ranges</a></span></dt>
-<dt><span class="section"><a href="range/mfc_atl/const_ranges.html">const Ranges</a></span></dt>
-<dt><span class="section"><a href="range/mfc_atl/references.html">References</a></span></dt>
-</dl></dd>
-<dt><span class="section"><a href="range/upgrade.html">Upgrade version of Boost.Range</a></span></dt>
-<dd><dl>
-<dt><span class="section"><a href="range/upgrade/upgrade_from_1_49.html">Upgrade from version
-      1.49</a></span></dt>
-<dt><span class="section"><a href="range/upgrade/upgrade_from_1_45.html">Upgrade from version
-      1.45</a></span></dt>
-<dt><span class="section"><a href="range/upgrade/upgrade_from_1_42.html">Upgrade from version
-      1.42</a></span></dt>
-<dt><span class="section"><a href="range/upgrade/upgrade_from_1_34.html">Upgrade from version
-      1.34</a></span></dt>
-</dl></dd>
-<dt><span class="section"><a href="range/portability.html">Portability</a></span></dt>
-<dt><span class="section"><a href="range/faq.html">FAQ</a></span></dt>
-<dt><span class="section"><a href="range/history_ack.html">History and Acknowledgement</a></span></dt>
 </dl>
 </div>
 <p>
-    Boost.Range is a collection of concepts and utilities, range-based algorithms,
-    as well as range adaptors that allow for efficient and expressive code.
-  </p>
+    This library is enhanced version of Boost Range Library.<br> It has powerful
+    Range adaptors and utilities for Range programming.<br> For example, using
+    this library, we can write quick sort as the following:
+</p>
+<pre class="programlisting"><span class="keyword">typedef</span>
+    <span class="identifier">any_range</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">,</span> <span class="identifier">forward_traversal_tag</span><span class="special">,</span> <span class="keyword">int</span><span class="special">&amp;,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">ptrdiff_t</span><span class="special">&gt;</span>
+<span class="identifier">range</span><span class="special">;</span>
+
+<span class="identifier">range</span> <span class="identifier">quick_sort</span><span class="special">(</span><span class="identifier">range</span> <span class="identifier">rng</span><span class="special">)</span>
+<span class="special">{</span>
+    <span class="keyword">if</span> <span class="special">(!</span><span class="identifier">rng</span><span class="special">)</span>
+        <span class="keyword">return</span> <span class="identifier">rng</span><span class="special">;</span>
+    <span class="keyword">else</span> <span class="special">{</span>
+        <span class="keyword">int</span><span class="special">&amp;</span> <span class="identifier">x</span> <span class="special">=</span> <span class="identifier">rng</span> <span class="special">|</span> <span class="identifier">front</span><span class="special">;</span>
+        <span class="identifier">range</span> <span class="identifier">xs</span> <span class="special">=</span> <span class="identifier">rng</span> <span class="special">|</span> <span class="identifier">dropped</span><span class="special">(</span><span class="number">1</span><span class="special">);</span>
+
+        <span class="keyword">return</span>
+            <span class="identifier">join</span><span class="special">(</span>
+                <span class="identifier">join</span><span class="special">(</span>
+                    <span class="identifier">quick_sort</span><span class="special">(</span><span class="identifier">xs</span> <span class="special">|+</span> <span class="identifier">filtered</span><span class="special">(</span><span class="identifier">_1</span> <span class="special">&lt;</span> <span class="identifier">x</span><span class="special">)),</span>
+                    <span class="identifier">single</span><span class="special">(</span><span class="identifier">x</span><span class="special">)</span>
+                <span class="special">),</span>
+                <span class="identifier">quick_sort</span><span class="special">(</span><span class="identifier">xs</span> <span class="special">|+</span> <span class="identifier">filtered</span><span class="special">(</span><span class="identifier">_1</span> <span class="special">&gt;=</span> <span class="identifier">x</span><span class="special">))</span>
+            <span class="special">);</span>
+    <span class="special">}</span>
+<span class="special">}</span>
+
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">assign</span><span class="special">::</span><span class="identifier">list_of</span><span class="special">(</span><span class="number">3</span><span class="special">)(</span><span class="number">2</span><span class="special">)(</span><span class="number">5</span><span class="special">)(</span><span class="number">4</span><span class="special">)(</span><span class="number">6</span><span class="special">)(</span><span class="number">1</span><span class="special">);</span>
+<span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">quick_sort</span><span class="special">(</span><span class="identifier">range</span><span class="special">(</span><span class="identifier">v</span><span class="special">))</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+</pre>
 <p>
-    Using Boost.Range inplace of the standard library alternatives results in more
-    readable code and in many cases greater efficiency.
   </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
-<td align="left"><p><small>Last revised: January 26, 2013 at 03:49:11 GMT</small></p></td>
+<td align="left"><p><small>Last revised: December 12, 2013 at 00:21:27 GMT</small></p></td>
 <td align="right"><div class="copyright-footer"></div></td>
 </tr></table>
 <hr>
-<div class="spirit-nav"><a accesskey="n" href="range/introduction.html"><img src="../../../../doc/src/images/next.png" alt="Next"></a></div>
+<div class="spirit-nav"><a accesskey="n" href="range_extension/reference.html"><img src="../../../../doc/src/images/next.png" alt="Next"></a></div>
 </body>
 </html>

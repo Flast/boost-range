@@ -9,6 +9,15 @@
 # For more information, see http://www.boost.org/libs/range/
 #
 
+# Boost.Range 2.0 Extension library
+# via PStade Oven Library
+#
+# Copyright Akira Takahashi 2011.
+# Copyright Shunsuke Sogame 2005-2007.
+# Use, modification and distribution is subject to the Boost Software License,
+# Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
+# http://www.boost.org/LICENSE_1_0.txt)
+
 # bring in rules for testing
 import testing ;
 
@@ -162,5 +171,45 @@ test-suite range :
 	[ range-test ticket_5547 ]
 	[ range-test ticket_5556_is_sorted_namespace ]
 	[ range-test ticket_6944 ]
+	;
+
+rule range_ext-test ( name : includes * )
+{
+    return [
+        run $(name).cpp
+        :
+        :
+        : <toolset>gcc:<cxxflags>"-Wall -Wunused"
+        ] ;
+}
+
+test-suite range_extension :
+    [ range_ext-test adaptor_test/adjacent_zipped ]
+    [ range_ext-test adaptor_test/dropped ]
+    [ range_ext-test adaptor_test/dropped_while ]
+    [ range_ext-test adaptor_test/elements ]
+    [ range_ext-test adaptor_test/elements_key ]
+    [ range_ext-test adaptor_test/memoized ]
+    [ range_ext-test adaptor_test/outdirected ]
+    [ range_ext-test adaptor_test/taken ]
+    [ range_ext-test adaptor_test/taken_while ]
+    [ range_ext-test access_test/at ]
+    [ range_ext-test access_test/back ]
+    [ range_ext-test access_test/front ]
+	[ range_ext-test algorithm_ext_test/all_of ]
+	[ range_ext-test algorithm_ext_test/any_of ]
+	[ range_ext-test algorithm_ext_test/none_of ]
+    [ range_ext-test algorithm_ext_test/fused_for_each ]
+#    [ range_ext-test directory_range ]
+    [ range_ext-test irange_ex ]
+    [ range_ext-test iteration ]
+    [ range_ext-test member_select_example ]
+    [ range_ext-test regular ]
+    [ range_ext-test regular_nullary_call ]
+    [ range_ext-test regular_example ]
+    [ range_ext-test regular_operator_example ]
+    [ range_ext-test single ]
+    [ range_ext-test split_at ]
+	[ range_ext-test as_container ]
     ;
 
