@@ -12,8 +12,10 @@
 
 #include <boost/range/algorithm_ext.hpp>
 #include <boost/range/algorithm/fill.hpp>
+#include <boost/range/value_type.hpp>
 #include <boost/assign.hpp>
 #include <boost/array.hpp>
+#include <boost/cstdint.hpp>
 
 #include <algorithm>
 #include <list>
@@ -30,12 +32,12 @@ namespace boost_range_adaptor_type_erased_test
         {
         }
 
-        MockType(int x)
+        MockType(boost::int32_t x)
             : m_x(x)
         {
         }
 
-        int get() const { return m_x; }
+        boost::int32_t get() const { return m_x; }
 
         inline bool operator==(const MockType& other) const
         {
@@ -48,7 +50,15 @@ namespace boost_range_adaptor_type_erased_test
         }
 
     private:
-        int m_x;
+        boost::int32_t m_x;
+    };
+    
+    class MockType2 : public MockType
+    {
+    public:
+        MockType2() {}
+        MockType2(boost::int32_t x) : MockType(x) { }
+        MockType2(const MockType& other) : MockType(other) { }
     };
 
     inline std::ostream& operator<<(std::ostream& out, const MockType& obj)
@@ -157,8 +167,6 @@ namespace boost_range_adaptor_type_erased_test
     void test_type_erased_impl()
     {
         using namespace boost::adaptors;
-
-        typedef Buffer buffer_type;
 
         typedef typename boost::range_value<Container>::type value_type;
 
@@ -418,15 +426,12 @@ namespace boost_range_adaptor_type_erased_test
     template<class Traversal>
     void test_type_erased_mix_values_driver()
     {
-        test_type_erased_mix_values_impl< Traversal, int, char, const int&, short, const int& >();
-        test_type_erased_mix_values_impl< Traversal, int, int*, const int&, char, const int& >();
-        test_type_erased_mix_values_impl< Traversal, MockType, char, const MockType&, short, const MockType& >();
-
-        // In fact value type should have no effect in the eligibility
-        // for conversion, hence we should be able to convert it
-        // completely backwards!
-        test_type_erased_mix_values_impl< Traversal, int, short, const int&, char, const int& >();
-        test_type_erased_mix_values_impl< Traversal, int, char, const int&, int*, const int& >();
+        test_type_erased_mix_values_impl<
+            Traversal,
+            MockType,
+            MockType2, const MockType&,
+            MockType, const MockType&
+        >();
     }
 
     void test_type_erased_mix_values()
@@ -445,13 +450,24 @@ namespace boost_range_adaptor_type_erased_test
         for (int i = 0; i < 10; ++i)
             c.push_back(i);
 
-        typedef boost::any_range<
-            int
-          , boost::random_access_traversal_tag
-          , int
-          , boost::range_difference< std::vector<int> >::type
-          , boost::use_default
-        > any_range_type;
+        typedef boost::any_range_type_generator<
+                            std::vector<int> >::type any_range_type;
+
+        BOOST_STATIC_ASSERT(
+                boost::is_same<
+                    int,
+                    boost::range_value<any_range_type>::type
+                >::value
+        );
+
+        BOOST_STATIC_ASSERT(
+                boost::is_same<
+                    boost::random_access_traversal_tag,
+                    boost::iterator_traversal<
+                        boost::range_iterator<any_range_type>::type
+                    >::type
+                >::value
+        );
 
         any_range_type rng = c | type_erased_t();
 
