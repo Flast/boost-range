@@ -30,6 +30,7 @@
 #include <boost/range/functions.hpp>
 #include <boost/range/iterator.hpp>
 #include <boost/range/difference_type.hpp>
+#include <boost/range/has_range_iterator.hpp>
 #include <boost/range/algorithm/equal.hpp>
 #include <boost/range/detail/safe_bool.hpp>
 #include <boost/utility/enable_if.hpp>
@@ -205,10 +206,16 @@ public:
        return *m_Begin;
    }
 
-   void pop_front()
+   void drop_front()
    {
        BOOST_ASSERT(!empty());
        ++m_Begin;
+   }
+
+   void drop_front(difference_type n)
+   {
+       BOOST_ASSERT(n >= difference_type());
+       std::advance(this->m_Begin, n);
    }
 
 protected:
@@ -255,16 +262,25 @@ protected:
     }
 
 public:
-    BOOST_DEDUCED_TYPENAME base_type::reference back() const
+    typedef BOOST_DEDUCED_TYPENAME base_type::difference_type difference_type;
+    typedef BOOST_DEDUCED_TYPENAME base_type::reference reference;
+
+    reference back() const
     {
         BOOST_ASSERT(!this->empty());
         return *boost::prior(this->m_End);
     }
 
-    void pop_back()
+    void drop_back()
     {
         BOOST_ASSERT(!this->empty());
         --this->m_End;
+    }
+
+    void drop_back(difference_type n)
+    {
+        BOOST_ASSERT(n >= difference_type());
+        std::advance(this->m_End, -n);
     }
 };
 
@@ -327,20 +343,6 @@ public:
         return this->m_Begin[at];
     }
 
-    void pop_front(difference_type n)
-    {
-        BOOST_ASSERT(n >= difference_type());
-        BOOST_ASSERT(size() >= static_cast<size_type>(n));
-        std::advance(this->m_Begin, n);
-    }
-
-    void pop_back(difference_type n)
-    {
-        BOOST_ASSERT(n >= difference_type());
-        BOOST_ASSERT(size() >= static_cast<size_type>(n));
-        std::advance(this->m_End, -n);
-    }
-
     BOOST_DEDUCED_TYPENAME base_type::size_type size() const
     {
         return this->m_End - this->m_Begin;
@@ -380,6 +382,19 @@ public:
                     BOOST_DEDUCED_TYPENAME iterator_traversal<IteratorT>::type
             > base_type;
 
+            template<class Source>
+            struct is_compatible_range
+                : is_convertible<
+                    BOOST_DEDUCED_TYPENAME mpl::eval_if<
+                        has_range_iterator<Source>,
+                        range_iterator<Source>,
+                        mpl::identity<void>
+                    >::type,
+                    BOOST_DEDUCED_TYPENAME base_type::iterator
+                >
+            {
+            };
+
         protected:
             typedef iterator_range_detail::iterator_range_impl<IteratorT> impl;
 
@@ -397,13 +412,23 @@ public:
             }
 
             template<class SinglePassRange>
-            iterator_range(const SinglePassRange& r)
+            iterator_range(
+                const SinglePassRange& r,
+                BOOST_DEDUCED_TYPENAME enable_if<
+                    is_compatible_range<const SinglePassRange>
+                >::type* = 0
+            )
                 : base_type(impl::adl_begin(r), impl::adl_end(r))
             {
             }
 
             template<class SinglePassRange>
-            iterator_range(SinglePassRange& r)
+            iterator_range(
+                SinglePassRange& r,
+                BOOST_DEDUCED_TYPENAME enable_if<
+                    is_compatible_range<SinglePassRange>
+                >::type* = 0
+            )
                 : base_type(impl::adl_begin(r), impl::adl_end(r))
             {
             }
@@ -684,7 +709,6 @@ public:
                     BOOST_DEDUCED_TYPENAME range_difference<Range>::type advance_begin,
                     BOOST_DEDUCED_TYPENAME range_difference<Range>::type advance_end )
         {
-            //BOOST_ASSERT( advance_begin - advance_end <= size(r) && "creating invalid range" );
             return iterator_range_detail::make_range_impl( r, advance_begin, advance_end );
         }
 
@@ -696,7 +720,6 @@ public:
                     BOOST_DEDUCED_TYPENAME range_difference<Range>::type advance_begin,
                     BOOST_DEDUCED_TYPENAME range_difference<Range>::type advance_end )
         {
-            //BOOST_ASSERT( advance_begin - advance_end <= size(r) && "creating invalid range" );
             return iterator_range_detail::make_range_impl( r, advance_begin, advance_end );
         }
 
@@ -706,7 +729,6 @@ public:
                     BOOST_DEDUCED_TYPENAME range_difference<Range>::type advance_begin,
                     BOOST_DEDUCED_TYPENAME range_difference<Range>::type advance_end )
         {
-            //BOOST_ASSERT( advance_begin - advance_end <= size(r) && "creating invalid range" );
             return iterator_range_detail::make_range_impl( r, advance_begin, advance_end );
         }
 
