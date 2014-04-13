@@ -230,8 +230,9 @@ test-suite range_extension :
 	[ range_ext-test algorithm_ext_test/any_of ]
 	[ range_ext-test algorithm_ext_test/none_of ]
     [ range_ext-test algorithm_ext_test/fused_for_each ]
-#    [ range_ext-test directory_range ]
-    [ range_ext-test irange_ex ]
+    [ run directory_range.cpp /boost/filesystem//boost_filesystem : :
+        : <toolset>gcc:<cxxflags>"-Wall -Wunused" ]
+#    [ range_ext-test irange_ex ]
     [ range_ext-test iteration ]
     [ range_ext-test member_select_example ]
     [ range_ext-test regular ]
