@@ -39,13 +39,9 @@ test-suite range_extension :
     [ range-test access_test/at ]
     [ range-test access_test/back ]
     [ range-test access_test/front ]
-	[ range-test algorithm_ext_test/all_of ]
-	[ range-test algorithm_ext_test/any_of ]
-	[ range-test algorithm_ext_test/none_of ]
     [ range-test algorithm_ext_test/fused_for_each ]
     [ run directory_range.cpp /boost/filesystem//boost_filesystem : :
         : <toolset>gcc:<cxxflags>"-Wall -Wunused" ]
-#    [ range-test irange_ex ]
     [ range-test iteration ]
     [ range-test member_select_example ]
     [ range-test regular ]
