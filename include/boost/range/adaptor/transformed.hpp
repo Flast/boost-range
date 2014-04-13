@@ -45,14 +45,16 @@ namespace boost
                 : base( boost::make_transform_iterator( boost::begin(r), f ),
                         boost::make_transform_iterator( boost::end(r), f ) )
 
-            { }
+            {
+            }
         };
 
         template< class T >
         struct transform_holder : holder<T>
         {
             transform_holder( T r ) : holder<T>(r)
-            { }
+            {
+            }
         };
 
         template< class InputRng, class UnaryFunction >
