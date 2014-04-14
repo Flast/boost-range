@@ -1,5 +1,6 @@
 [/
     Copyright 2010 Neil Groves
+    Copyright 2011-2012 Akira Takahashi
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
@@ -54,5 +55,12 @@ user feedback, design suggestions, or defect detection:
 
 Regardless of how I write this section it will never truly fairly capture the
 gratitude that I feel to all who have contributed. Thank you everyone.
+
+[heading Version 2 with Extension - Boost 1.56 and beyond]
+
+* Shunsuke Sogame : P-Stade C++ Libraries Original Author
+* Kohsuke Yuasa : P-Stade C++ Libraries Committer
+* Norihisa Fujita : P-Stade C++ Libraries Committer
+* Kazunori Tsumura : English Translator
 
 [endsect]

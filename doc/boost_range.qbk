@@ -1,5 +1,7 @@
 [/==============================================================================
     Copyright (C) 2003-2010 Thorsten Ottosen, Neil Groves
+    Copyright (C) Shunsuke Sogame 2005-2007.
+    Copyright (C) 2011 Akira Takahashi
 
     Use, modification and distribution is subject to the Boost Software
     License, Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
@@ -7,9 +9,9 @@
 ==============================================================================/]
 [library Range
     [quickbook 1.5]
-    [version 2.0]
-    [authors [Ottosen, Thorsten], [Groves, Neil]]
-    [copyright 2003-2010 Thorsten Ottosen, Neil Groves]
+    [version 2.0 with Extension]
+    [authors [Ottosen, Thorsten], [Groves, Neil], [Takahashi, Akira]]
+    [copyright 2003-2010 Thorsten Ottosen, Neil Groves, 2005-2007 Shunsuke Sogame, 2011 Akira Takahashi]
     [purpose Half-open range library]
     [license
         Distributed under the Boost Software License, Version 1.0.
@@ -32,6 +34,7 @@
 [def __single_pass_range__      [link range.concepts.single_pass_range Single Pass Range]]
 [def __bidirectional_range__    [link range.concepts.bidirectional_range Bidirectional Range]]
 [def __random_access_range__    [link range.concepts.random_access_range Random Access Range]]
+[def __fusion_forward_sequence__ [link fusion.sequence.concepts.forward_sequence Fusion Forward Sequence]]
 
 [def __iterator_range__         [link range.reference.utilities.iterator_range `iterator_range`]]
 [def __sub_range__              [link range.reference.utilities.sub_range `sub_range`]]
@@ -179,6 +182,16 @@
 [def __sgi_partial_sum__        [@http://www.sgi.com/tech/stl/partial_sum.html partial_sum]]
 [def __type_erasure_article__   [@http://www.artima.com/cppsource/type_erasure.html type erasure article]]
 
+[def __default_constructible__  [@boost:/doc/html/DefaultConstructible.html Default Constructible]]
+[def __copy_constructible__     [@boost:/doc/html/CopyConstructible.html Copy Constructible]]
+[def __assignable__             [@boost:/doc/html/Assignable.html Assignable]]
+[def __polymorphic_function_object__ [link fusion.functional.concepts.poly Polymorphic Function Object]]
+[def __less_than_comparable__   [@boost:/doc/html/LessThanComparable.html Less Than Comparable]]
+[def __equality_comparable__    [@boost:/doc/html/EqualityComparable.html Equality Comparable]]
+[def __regular__                [@http://www.informit.com/guides/content.aspx?g=cplusplus&seqNum=314 Regular]]
+[def __input_iterator__         [@boost:/doc/html/InputIterator.html Input Iterator]]
+[def __boost_lambda__           [@boost:/libs/lambda/doc/index.html Boost.Lambda]]
+
 Boost.Range is a collection of concepts and utilities, range-based algorithms,
 as well as range adaptors that allow for efficient and expressive code.
 
@@ -186,8 +199,10 @@ Using Boost.Range inplace of the standard library alternatives results in more
 readable code and in many cases greater efficiency.
 
 [include introduction.qbk]
+[include overview.qbk]
 [include concepts.qbk]
 [include reference.qbk]
+[include design_rationale.qbk]
 [include style.qbk]
 [include headers.qbk]
 [include examples.qbk]
