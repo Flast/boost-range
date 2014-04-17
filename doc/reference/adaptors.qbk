@@ -256,6 +256,7 @@ It makes easier to use lambda expression with Range Adaptors.
 [include adaptors/outdirected.qbk]
 [include adaptors/taken.qbk]
 [include adaptors/taken_while.qbk]
+[endsect]
 
 [endsect]
 
