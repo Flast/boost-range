@@ -173,7 +173,7 @@
 [section:experimental Experimental]
 [table
     [[Header                                        ][Includes                                           ]]
-    [[`<boost/range/experimental/adaptor/tapped.hpp>`] [__range_experimental_adaptor_tapped__]]
+    [[`<boost/range/experimental/adaptor/tapped.hpp>`] [undocumented experimental adaptor]]
 ]
 [endsect]
 
