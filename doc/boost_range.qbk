@@ -74,9 +74,9 @@
 [def __iteration__              [link range.reference.range_utility.iteration `iteration`]]
 [def __single__                 [link range.reference.range_utility.single `single`]]
 [def __split_at__               [link range.reference.range_utility.split_at `split_at`]]
-[def __at__                     [link range.reference.access.at `at`]]
-[def __back__                   [link range.reference.access.back `back`]]
-[def __front__                  [link range.reference.access.front `front`]]
+[def __at__                     [link range.reference.range_access.at `at`]]
+[def __back__                   [link range.reference.range_access.back `back`]]
+[def __front__                  [link range.reference.range_access.front `front`]]
 [def __traversal__              [link range.reference.range_utility.traversal `traversal`]]
 
 [def __range_adaptors__                   [link range.reference.adaptors Range adaptors]]
