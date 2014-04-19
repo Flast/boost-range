@@ -38,10 +38,10 @@
 
 [def __iterator_range__         [link range.reference.utilities.iterator_range `iterator_range`]]
 [def __sub_range__              [link range.reference.utilities.sub_range `sub_range`]]
-[def __directory_range__        [link range.reference.range_utility.directory_range Directory Range]]
+[def __directory_range__        [link range.reference.range_utility.directory_range `directory_range`]]
 [def __minimal_interface__      [link range.reference.extending minimal interface]]
 [def __range_result_iterator__  [link range.reference.concept_implementation.semantics.metafunctions `range_result_iterator`]]
-[def __extending_for_udts__ [link range.reference.extending Extending the library for UDTs]]
+[def __extending_for_udts__     [link range.reference.extending Extending the library for UDTs]]
 [def __implementation_of_metafunctions__ [link range.reference.concept_implementation.semantics.metafunctions Implementation of metafunctions]]
 [def __implementation_of_functions__     [link range.reference.concept_implementation.semantics.functions Implementation of functions]]
 
