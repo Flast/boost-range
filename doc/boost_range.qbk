@@ -180,7 +180,7 @@
 [def __range_algorithm_ext_copy_n__         [link range.reference.algorithms.new.copy_n copy_n]]
 [def __range_algorithm_ext_erase__          [link range.reference.algorithms.new.erase erase]]
 [def __range_algorithm_ext_for_each__       [link range.reference.algorithms.new.for_each for_each]]
-[def __range_algorithm_ext_fused_for_each__ [link range.reference.algorithm_extension.fused_for_each fused_for_each]]
+[def __range_algorithm_ext_fused_for_each__ [link range.reference.algorithms.new.fused_for_each fused_for_each]]
 [def __range_algorithm_ext_insert__         [link range.reference.algorithms.new.insert insert]]
 [def __range_algorithm_ext_iota__           [link range.reference.algorithms.new.iota iota]]
 [def __range_algorithm_ext_is_sorted__      [link range.reference.algorithms.new.is_sorted is_sorted]]

@@ -163,6 +163,7 @@ and there is no need to worry about generating an invalid range. Furthermore, if
 [include algorithm_ext/copy_n.qbk]
 [include algorithm_ext/erase.qbk]
 [include algorithm_ext/for_each.qbk]
+[include algorithm_ext/fused_for_each.qbk]
 [include algorithm_ext/insert.qbk]
 [include algorithm_ext/iota.qbk]
 [include algorithm_ext/is_sorted.qbk]

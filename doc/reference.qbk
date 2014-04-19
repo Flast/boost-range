@@ -16,7 +16,6 @@
 [include reference/adaptors.qbk]
 [include reference/regular_extension.qbk]
 [include reference/algorithms.qbk]
-[include reference/algorithm_ext.qbk]
 [include reference/ranges.qbk]
 [include reference/access.qbk]
 [include reference/range_utility.qbk]
