@@ -6,11 +6,7 @@
 [section:range_utility Range Utilities]
 
 [include range_utility/as_container.qbk]
-[include range_utility/directory_range.qbk]
-[include range_utility/iteration.qbk]
-[include range_utility/recursive_directory_range.qbk]
 [include range_utility/regular.qbk]
-[include range_utility/single.qbk]
 [include range_utility/split_at.qbk]
 
 [endsect]

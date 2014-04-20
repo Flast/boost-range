@@ -37,10 +37,11 @@
     [[`<boost/range/counting_range.hpp>`  ] [ __counting_range__ ] [-]]
     [[`<boost/range/istream_range.hpp>`   ] [ __istream_range__ ] [-]]
     [[`<boost/range/irange.hpp>`          ] [ __irange__ ] [-]]
-    [[`<boost/range/directory_range.hpp>` ] [__directory_range__] [-]]
-    [[`<boost/range/join.hpp>`            ] [ __join__ ] [-]]
+    [[`<boost/range/directory_range.hpp>` ] [__directory_range__
+                                             __recursive_directory_range__] [-]]
     [[`<boost/range/iteration.hpp>`       ] [__iteration__] [-]]
     [[`<boost/range/single.hpp>`          ] [__single__] [-]]
+    [[`<boost/range/join.hpp>`            ] [ __join__ ] [-]]
     [[`<boost/range/split_at.hpp>`        ] [__split_at__] [-]]
     [[`<boost/range/traversal.hpp>`       ] [__traversal__] [-]]
     [[`<boost/range/access/at.hpp>`            ] [__at__] [-]]
