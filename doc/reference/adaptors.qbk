@@ -186,8 +186,8 @@ rng | boost::adaptors::adaptor_generator
 
 [section Range Extension]
 
-Range Extension involved in this library are inspired by PStade.Oven and Haskell Prelude Library.[br]
-They are of use for powerful range programming(functional programming).[br]
+Range Adaptors involved in this library are inspired by PStade.Oven and Haskell Prelude Library.
+They are of use for powerful range programming(functional programming).
 Additionaly, it makes lazy sequence much easier, powerful to use by this library.
 
 ``
@@ -244,7 +244,7 @@ int main()
     boost::for_each(v |+ filtered(_1 % 2 == 0) |+ transformed(_1 * 2), disp);
 }
 ``
-This library provides regular operator : operator|+().[br]
+This library provides regular operator : operator|+().
 It makes easier to use lambda expression with Range Adaptors.
 
 [include adaptors/adjacent_zipped.qbk]
