@@ -226,7 +226,6 @@ readable code and in many cases greater efficiency.
 [include overview.qbk]
 [include concepts.qbk]
 [include reference.qbk]
-[include design_rationale.qbk]
 [include style.qbk]
 [include headers.qbk]
 [include examples.qbk]

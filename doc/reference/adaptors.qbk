@@ -127,6 +127,60 @@ In other words:
 
 [endsect]
 
+[section:regular_operator Regular Operator]
+
+`regular` function is an adaptor for passing some lambda expression to Range adaptors.
+
+``
+template <class InputIterator, class F>
+F for_each_(InputIterator first, InputIterator last, F f)
+{
+    InputIterator it; // default construct
+    it = first; // copy assign
+
+    while (it != last) {
+        f(*it);
+        ++it;
+    }
+    return f;
+}
+
+template <class Range, class F>
+F for_each_(const Range& r, F f)
+{
+    return for_each_(boost::begin(r), boost::end(r), f);
+}
+
+...
+using boost::lambda::_1;
+for_each_(r | filtered(_1 % 2 == 0), f);          // Error! Can't default construct/copy assign
+for_each_(r | filtered(regular(_1 % 2 == 0)), f); // OK
+``
+Lambda expression is to define some function object easily. However, using `regular` makes rather verbose. There should be some short syntax.
+
+*1. implicit `regular`
+It is not impossible to check whether it is a lambda expression (or satisfy the Regular Concept) and adapt `regular` implicitly. But it is not a good idea because `regular` takes some costs. Therefore, implicit `regular` should be avoided.
+
+*2. separating namespace
+Consider this way of separating namespace and adapting `regular` automatically.
+``
+using boost::adaptors::regular;
+for_each(r | filtered(_1 % 2 == 0), f);
+``
+Unfortunately, it is far from the solution.
+
+*3. `regular` operator
+So, by the process of exclusion, it may as well define some operator. but which is?
+We need some operator which has the same precedence and associativity. Unfortunately, there is no built-in alternative of that sort. Hence we have to create new operator: operator|+(), which is a combination of operator|() and unary operator+().
+Finally, we can write the example of the first as the following:
+``
+using boost::lambda::_1;
+for_each_(r |  filtered(regular(_1 % 2 == 0)), f); // OK : use regular function
+for_each_(r |+ filtered(_1 % 2 == 0), f);          // OK : use regular operator
+``
+
+[endsect]
+
 [section:general_requirements General Requirements]
 
 In the description of generator expressions, the following notation is used:
