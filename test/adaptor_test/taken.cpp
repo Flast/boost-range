@@ -14,7 +14,7 @@
 #include <list>
 
 #include <boost/assign/list_of.hpp>
-#include <boost/range/adaptor/regular_extension/filtered.hpp>
+#include <boost/range/adaptor/filtered.hpp>
 #include <boost/range/access/front.hpp>
 #include <boost/lambda/lambda.hpp>
 #include <boost/range/algorithm/equal.hpp>

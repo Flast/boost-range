@@ -11,7 +11,7 @@
 #include <vector>
 #include <string>
 #include <boost/assign/list_of.hpp>
-#include <boost/range/adaptor/regular_extension/transformed.hpp>
+#include <boost/range/adaptor/transformed.hpp>
 #include <boost/range/algorithm/for_each.hpp>
 #include <boost/lambda/lambda.hpp>
 

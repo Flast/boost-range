@@ -8,6 +8,7 @@
 [table
     [[Syntax] [Code]]
     [[Pipe] [`rng | boost::adaptors::filtered(pred)`]]
+    [[Regular Operator] [`rng |+ boost::adaptors::filtered(pred)`]]
     [[Function] [`boost::adaptors::filter(rng, pred)`]]
 ]
 

@@ -14,7 +14,6 @@
 [endsect]
 
 [include reference/adaptors.qbk]
-[include reference/regular_extension.qbk]
 [include reference/algorithms.qbk]
 [include reference/ranges.qbk]
 [include reference/access.qbk]

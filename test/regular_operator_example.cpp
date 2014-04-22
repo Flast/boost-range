@@ -13,8 +13,8 @@
 #include <boost/assign/list_of.hpp>
 #include <boost/range/adaptor/taken_while.hpp>
 #include <boost/range/adaptor/dropped_while.hpp>
-#include <boost/range/adaptor/regular_extension/filtered.hpp>
-#include <boost/range/adaptor/regular_extension/transformed.hpp>
+#include <boost/range/adaptor/filtered.hpp>
+#include <boost/range/adaptor/transformed.hpp>
 #include <boost/lambda/lambda.hpp>
 
 // description:
