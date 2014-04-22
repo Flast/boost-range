@@ -112,12 +112,6 @@
 [def __range_adaptors_transformed__       [link range.reference.adaptors.reference.transformed transformed]]
 [def __range_adaptors_uniqued__           [link range.reference.adaptors.reference.uniqued uniqued]]
 
-[def __range_regular__                                [link range.reference.regular_extension Regular Extension]]
-[def __range_adaptor_regular_extensions_filtered__    [link range.reference.regular_extension.filtered filtered]]
-[def __range_adaptor_regular_extensions_replaced_if__ [link range.reference.regular_extension.replaced_if replaced_if]]
-[def __range_adaptor_regular_extensions_transformed__ [link range.reference.regular_extension.transformed transformed]]
-[def __range_adaptor_regular_operator__               [link range.design_rationale.regular_op Reguar Operator]]
-
 [def __range_algorithms__                         [link range.reference.algorithms Range algorithms]]
 [def __range_algorithms_adjacent_find__           [link range.reference.algorithms.non_mutating.adjacent_find adjacent_find]]
 [def __range_algorithms_binary_search__           [link range.reference.algorithms.non_mutating.binary_search binary_search]]
