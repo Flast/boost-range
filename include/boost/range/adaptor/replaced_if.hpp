@@ -17,6 +17,7 @@
 #include <boost/range/begin.hpp>
 #include <boost/range/end.hpp>
 #include <boost/range/value_type.hpp>
+#include <boost/range/regular.hpp>
 #include <boost/iterator/iterator_adaptor.hpp>
 #include <boost/iterator/transform_iterator.hpp>
 
@@ -85,6 +86,19 @@ namespace boost
             Pred m_pred;
             T m_to;
         };
+
+        template< class Pred, class T >
+        inline replace_if_holder<typename ::boost::range::result_of::regular<Pred>::type, T>
+        operator+(const replace_if_holder<Pred, T>& f)
+        {
+            typedef
+                replace_if_holder<
+                    typename ::boost::range::result_of::regular<Pred>::type, T
+                >
+            result_type;
+
+            return result_type(regular(f.pred()), f.to());
+        }
 
         template< class Pred, class InputRng >
         inline replaced_if_range<Pred, InputRng>

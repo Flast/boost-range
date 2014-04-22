@@ -13,6 +13,8 @@
 
 #include <boost/range/adaptor/argument_fwd.hpp>
 #include <boost/range/iterator_range.hpp>
+#include <boost/range/regular.hpp>
+#include <boost/range/adaptor/regular_operator.hpp>
 #include <boost/iterator/filter_iterator.hpp>
 
 namespace boost
@@ -46,6 +48,8 @@ namespace boost
             filter_holder( T r ) : holder<T>(r)
             { }
         };
+
+        BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(filter_holder);
 
         template< class InputRng, class Predicate >
         inline filtered_range<Predicate, InputRng>

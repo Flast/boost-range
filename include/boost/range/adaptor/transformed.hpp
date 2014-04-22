@@ -13,6 +13,8 @@
 
 #include <boost/range/adaptor/argument_fwd.hpp>
 #include <boost/range/iterator_range.hpp>
+#include <boost/range/regular.hpp>
+#include <boost/range/adaptor/regular_operator.hpp>
 #include <boost/iterator/transform_iterator.hpp>
 #include <boost/utility/result_of.hpp>
 
@@ -56,6 +58,8 @@ namespace boost
             {
             }
         };
+
+        BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(transform_holder);
 
         template< class InputRng, class UnaryFunction >
         inline transformed_range<UnaryFunction,InputRng>

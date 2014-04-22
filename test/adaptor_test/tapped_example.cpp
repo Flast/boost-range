@@ -11,8 +11,8 @@
 #include <vector>
 #include <boost/lambda/lambda.hpp>
 #include <boost/range/algorithm/for_each.hpp>
-#include <boost/range/adaptor/regular_extension/filtered.hpp>
-#include <boost/range/adaptor/regular_extension/transformed.hpp>
+#include <boost/range/adaptor/filtered.hpp>
+#include <boost/range/adaptor/transformed.hpp>
 #include <boost/range/adaptor/memoized.hpp>
 #include <boost/range/experimental/adaptor/tapped.hpp>
 

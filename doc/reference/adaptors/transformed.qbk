@@ -8,6 +8,7 @@
 [table
     [[Syntax] [Code]]
     [[Pipe] [`rng | boost::adaptors::transformed(fun)`]]
+    [[Regular Operator] [`rng |+ boost::adaptors::transformed(fun)`]]
     [[Function] [`boost::adaptors::transform(rng, fun)`]]
 ]
 

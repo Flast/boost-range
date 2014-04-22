@@ -8,6 +8,7 @@
 [table
     [[Syntax] [Code]]
     [[Pipe] [`rng | boost::adaptors::replaced_if(pred, new_value)`]]
+    [[Regular Operator] [`rng |+ boost::adaptors::replaced_if(pred, new_value)`]]
     [[Function] [`boost::adaptors::replace_if(rng, pred, new_value)`]]
 ]
 
