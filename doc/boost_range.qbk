@@ -75,6 +75,7 @@
 [def __separated__              [link range.reference.utilities.separated `separated`]]
 [def __join__                   [link range.reference.utilities.join `join`]]
 [def __split_at__               [link range.reference.range_utility.split_at `split_at`]]
+[def __regular__                [link range.reference.range_utility.regular `regular`]]
 [def __traversal__              [link range.reference.range_utility.traversal `traversal`]]
 [def __at__                     [link range.reference.range_access.at `at`]]
 [def __value_at__               [link range.reference.range_access.value_at `value_at`]]
@@ -87,6 +88,7 @@
 [def __optional_front__         [link range.reference.range_access.optional_front `optional_front`]]
 
 [def __range_adaptors__                   [link range.reference.adaptors Range adaptors]]
+[def __range_adaptors_regular_operator__  [link range.reference.adaptors.regular_operator Regular Operator]]
 [def __range_adaptors_adjacent_filtered__ [link range.reference.adaptors.reference.adjacent_filtered adjacent_filtered]]
 [def __range_adaptors_adjacent_zipped__   [link range.reference.adaptors.reference.adjacent_zipped adjacent_zipped]]
 [def __range_adaptors_copied__            [link range.reference.adaptors.reference.copied copied]]
