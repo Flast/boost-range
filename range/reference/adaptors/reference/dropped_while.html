@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>taken_while</title>
+<title>dropped_while</title>
 <link rel="stylesheet" href="../../../.././doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
 <link rel="home" href="../../../../index.html" title="Chapter&#160;1.&#160;Range 2.0 with Extension">
-<link rel="up" href="../range_extension.html" title="Range Extension">
-<link rel="prev" href="taken.html" title="taken">
-<link rel="next" href="../../algorithms.html" title="Range Algorithms">
+<link rel="up" href="../reference.html" title="Reference">
+<link rel="prev" href="dropped.html" title="dropped">
+<link rel="next" href="elements.html" title="elements">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -20,16 +20,15 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="taken.html"><img src="../../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../range_extension.html"><img src="../../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../../index.html"><img src="../../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="../../algorithms.html"><img src="../../../.././doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="dropped.html"><img src="../../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html"><img src="../../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../../index.html"><img src="../../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="elements.html"><img src="../../../.././doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h5 class="title">
-<a name="range.reference.adaptors.range_extension.taken_while"></a><a class="link" href="taken_while.html" title="taken_while">taken_while</a>
+<a name="range.reference.adaptors.reference.dropped_while"></a><a class="link" href="dropped_while.html" title="dropped_while">dropped_while</a>
 </h5></div></div></div>
 <p>
-            <code class="computeroutput"><span class="identifier">taken_while</span></code>, applied
-            to a predicate and the base range, returns the longest prefix (possibly
-            empty) of the range of elements that satisfy the predicate.
+            <code class="computeroutput"><span class="identifier">dropped_while</span></code> drops elements
+            from the base range while a predicate satisfies.
           </p>
 <div class="informaltable"><table class="table">
 <colgroup>
@@ -58,7 +57,7 @@
 <td>
                     <p>
                       <code class="computeroutput"><span class="identifier">rng</span> <span class="special">|</span>
-                      <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">::</span><span class="identifier">taken_while</span><span class="special">(</span><span class="identifier">pred</span><span class="special">)</span></code>
+                      <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">::</span><span class="identifier">dropped_while</span><span class="special">(</span><span class="identifier">pred</span><span class="special">)</span></code>
                     </p>
                   </td>
 </tr>
@@ -71,7 +70,7 @@
 <td>
                     <p>
                       <code class="computeroutput"><span class="identifier">rng</span> <span class="special">|+</span>
-                      <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">::</span><span class="identifier">taken_while</span><span class="special">(</span><span class="identifier">pred</span><span class="special">)</span></code>
+                      <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">::</span><span class="identifier">dropped_while</span><span class="special">(</span><span class="identifier">pred</span><span class="special">)</span></code>
                     </p>
                   </td>
 </tr>
@@ -83,7 +82,7 @@
                   </td>
 <td>
                     <p>
-                      <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">::</span><span class="identifier">take_while</span><span class="special">(</span><span class="identifier">rng</span><span class="special">,</span>
+                      <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">::</span><span class="identifier">drop_while</span><span class="special">(</span><span class="identifier">rng</span><span class="special">,</span>
                       <span class="identifier">pred</span><span class="special">)</span></code>
                     </p>
                   </td>
@@ -100,28 +99,26 @@
                 Pass Range</a>
               </li>
 <li class="listitem">
-                <span class="bold"><strong>Range Return Type:</strong></span> boost::taken_while_range&lt;Range&gt;
+                <span class="bold"><strong>Range Return Type:</strong></span> boost::dropped_while_range&lt;Range&gt;
               </li>
 <li class="listitem">
-                <span class="bold"><strong>Returned Range Category:</strong></span> The minimum
-                of the range category of <code class="computeroutput"><span class="identifier">rng</span></code>
-                and <a class="link" href="../../../concepts/bidirectional_range.html" title="Bidirectional Range">Bidirectional
-                Range</a>
+                <span class="bold"><strong>Returned Range Category:</strong></span> the range
+                category of <code class="computeroutput"><span class="identifier">rng</span></code>
               </li>
 </ul></div>
 <h6>
-<a name="range.reference.adaptors.range_extension.taken_while.h0"></a>
-            <span><a name="range.reference.adaptors.range_extension.taken_while.header"></a></span><a class="link" href="taken_while.html#range.reference.adaptors.range_extension.taken_while.header">Header</a>
+<a name="range.reference.adaptors.reference.dropped_while.h0"></a>
+            <span><a name="range.reference.adaptors.reference.dropped_while.header"></a></span><a class="link" href="dropped_while.html#range.reference.adaptors.reference.dropped_while.header">Header</a>
           </h6>
 <p>
 </p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">taken_while</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">dropped_while</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 </pre>
 <p>
           </p>
 <h6>
-<a name="range.reference.adaptors.range_extension.taken_while.h1"></a>
-            <span><a name="range.reference.adaptors.range_extension.taken_while.associative_header"></a></span><a class="link" href="taken_while.html#range.reference.adaptors.range_extension.taken_while.associative_header">Associative
+<a name="range.reference.adaptors.reference.dropped_while.h1"></a>
+            <span><a name="range.reference.adaptors.reference.dropped_while.associative_header"></a></span><a class="link" href="dropped_while.html#range.reference.adaptors.reference.dropped_while.associative_header">Associative
             Header</a>
           </h6>
 <p>
@@ -131,12 +128,12 @@
 <p>
           </p>
 <h6>
-<a name="range.reference.adaptors.range_extension.taken_while.h2"></a>
-            <span><a name="range.reference.adaptors.range_extension.taken_while.example"></a></span><a class="link" href="taken_while.html#range.reference.adaptors.range_extension.taken_while.example">Example</a>
+<a name="range.reference.adaptors.reference.dropped_while.h2"></a>
+            <span><a name="range.reference.adaptors.reference.dropped_while.example"></a></span><a class="link" href="dropped_while.html#range.reference.adaptors.reference.dropped_while.example">Example</a>
           </h6>
 <p>
 </p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">taken_while</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">dropped_while</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">for_each</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">assign</span><span class="special">/</span><span class="identifier">list_of</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
@@ -151,7 +148,7 @@
 <span class="special">{</span>
     <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">assign</span><span class="special">::</span><span class="identifier">list_of</span><span class="special">(</span><span class="number">2</span><span class="special">)(</span><span class="number">4</span><span class="special">)(</span><span class="number">6</span><span class="special">)(</span><span class="number">1</span><span class="special">)(</span><span class="number">3</span><span class="special">);</span>
 
-    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">v</span> <span class="special">|</span> <span class="identifier">taken_while</span><span class="special">(</span><span class="identifier">is_even</span><span class="special">),</span> <span class="identifier">disp</span><span class="special">);</span>
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">v</span> <span class="special">|</span> <span class="identifier">dropped_while</span><span class="special">(</span><span class="identifier">is_even</span><span class="special">),</span> <span class="identifier">disp</span><span class="special">);</span>
 <span class="special">}</span>
 </pre>
 <p>
@@ -159,7 +156,7 @@
 <p>
             This would produce the output:
 </p>
-<pre class="programlisting"><span class="number">2</span> <span class="number">4</span> <span class="number">6</span>
+<pre class="programlisting"><span class="number">1</span> <span class="number">3</span>
 </pre>
 <p>
           </p>
@@ -175,7 +172,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="taken.html"><img src="../../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../range_extension.html"><img src="../../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../../index.html"><img src="../../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="../../algorithms.html"><img src="../../../.././doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="dropped.html"><img src="../../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../reference.html"><img src="../../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../../index.html"><img src="../../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="elements.html"><img src="../../../.././doc/src/images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>
