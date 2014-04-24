@@ -221,95 +221,30 @@ rng | boost::adaptors::adaptor_generator
 
 [section:reference Reference]
 [include adaptors/adjacent_filtered.qbk]
+[include adaptors/adjacent_zipped.qbk]
 [include adaptors/copied.qbk]
+[include adaptors/dropped.qbk]
+[include adaptors/dropped_while.qbk]
+[include adaptors/elements.qbk]
+[include adaptors/elements_key.qbk]
 [include adaptors/filtered.qbk]
 [include adaptors/indexed.qbk]
 [include adaptors/indirected.qbk]
 [include adaptors/map_keys.qbk]
 [include adaptors/map_values.qbk]
+[include adaptors/memoized.qbk]
+[include adaptors/outdirected.qbk]
 [include adaptors/replaced.qbk]
 [include adaptors/replaced_if.qbk]
 [include adaptors/reversed.qbk]
 [include adaptors/sliced.qbk]
 [include adaptors/strided.qbk]
-[include adaptors/type_erased.qbk]
-[include adaptors/tokenized.qbk]
-[include adaptors/transformed.qbk]
-[include adaptors/uniqued.qbk]
-[endsect]
-
-[section Range Extension]
-
-Range Adaptors involved in this library are inspired by PStade.Oven and Haskell Prelude Library.
-They are of use for powerful range programming(functional programming).
-Additionaly, it makes lazy sequence much easier, powerful to use by this library.
-
-``
-#include <boost/range/adaptors/iteration.hpp>
-#include <boost/range/adaptors/taken.hpp>
-#include <boost/range/algorithm/for_each.hpp>
-#include <iostream>
-
-int next(int x) { return x * 2; }
-void disp(int x) { std::cout << x << ' '; }
-
-boost::for_each(boost::iteration(1, next) | boost::adaptors::taken(5), disp);
-  // 1 2 4 8 10
-``
-
-And also, this library deals with lambda expression(BLL and C++11 Lambda).
-``
-#include <boost/range/adaptors/iteration.hpp>
-#include <boost/range/adaptors/taken.hpp>
-#include <boost/range/algorithm/for_each.hpp>
-#include <boost/range/regular.hpp>
-#include <boost/lambda/lambda.hpp>
-#include <iostream>
-
-using boost::lambda::_1;
-
-void disp(int x) { std::cout << x << ' '; }
-
-boost::for_each(boost::iteration(1, boost::regular(_1 * 2)) | boost::adaptors::taken(5), disp);
-  // 1 2 4 8 10
-``
-
-regular is a functhon that adapt lambda expression to Regular Concept.
- 
-Whenever using lambda expression with iterator adaptors, we must write down regular function. But it is verbous. So, there is a syntax sugar for regular function in this library.
-
-``
-#include <iostream>
-#include <vector>
-#include <boost/assign/list_of.hpp>
-#include <boost/range/adaptor/filtered.hpp>
-#include <boost/range/adaptor/transformed.hpp>
-#include <boost/range/algorithm/for_each.hpp>
-#include <boost/lambda/lambda.hpp>
-
-void disp(int x) { std::cout << x << ' '; }
-
-int main()
-{
-    using boost::lambda::_1;
-    using namespace boost::adaptors;
-
-    const std::vector<int> v = boost::assign::list_of(1)(2)(3)(4)(5)(6);
-    boost::for_each(v |+ filtered(_1 % 2 == 0) |+ transformed(_1 * 2), disp);
-}
-``
-This library provides regular operator : operator|+().
-It makes easier to use lambda expression with Range Adaptors.
-
-[include adaptors/adjacent_zipped.qbk]
-[include adaptors/dropped.qbk]
-[include adaptors/dropped_while.qbk]
-[include adaptors/elements.qbk]
-[include adaptors/elements_key.qbk]
-[include adaptors/memoized.qbk]
-[include adaptors/outdirected.qbk]
 [include adaptors/taken.qbk]
 [include adaptors/taken_while.qbk]
+[include adaptors/tokenized.qbk]
+[include adaptors/transformed.qbk]
+[include adaptors/type_erased.qbk]
+[include adaptors/uniqued.qbk]
 [endsect]
 
 [endsect]
