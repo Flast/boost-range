@@ -62,7 +62,7 @@ Range Adaptors involved in this extension are inspired by P-Stade.Oven and Haske
 They are of use for powerful range programming(functional programming).
 Additionaly, it makes lazy sequence much easier, powerful to use by this library.
 
-And also, this extension deals with lambda expression(BLL and C++11 Lambda).
+And also, this extension deals with lambda expression(__boost_lambda__ and C++11 Lambda).
 
 * Shunsuke Sogame : P-Stade C++ Libraries Original Author
 * Kohsuke Yuasa : P-Stade C++ Libraries Committer
