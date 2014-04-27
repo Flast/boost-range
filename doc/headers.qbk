@@ -25,7 +25,6 @@
     [[`<boost/range/rbegin.hpp>`          ] [__rbegin__ and __const_rbegin__] [__bidirectional_range__ ]]
     [[`<boost/range/rend.hpp>`            ] [__rend__ and __const_rend__ ] [__bidirectional_range__ ]]
     [[`<boost/range/as_array.hpp>`        ] [__as_array__               ] [-                       ]]
-    [[`<boost/range/as_container.hpp>`    ] [__as_container__           ] [-                       ]]
     [[`<boost/range/as_literal.hpp>`      ] [__as_literal__             ] [-                       ]]
     [[`<boost/range/iterator_range.hpp>`  ] [__iterator_range__         ] [-                       ]]
     [[`<boost/range/sub_range.hpp>`       ] [__sub_range__              ] [-                       ]]
@@ -42,8 +41,6 @@
     [[`<boost/range/iteration.hpp>`       ] [__iteration__] [-]]
     [[`<boost/range/single.hpp>`          ] [__single__] [-]]
     [[`<boost/range/join.hpp>`            ] [ __join__ ] [-]]
-    [[`<boost/range/split_at.hpp>`        ] [__split_at__] [-]]
-    [[`<boost/range/traversal.hpp>`       ] [__traversal__] [-]]
     [[`<boost/range/access/at.hpp>`            ] [__at__] [-]]
     [[`<boost/range/access/value_at.hpp>`      ] [__value_at__] [-]]
     [[`<boost/range/access/optional_at.hpp>`   ] [__optional_at__] [-]]
@@ -84,11 +81,14 @@
 ]
 [endsect]
 
-[section:regular Regular]
+[section:utility Range Utility]
 [table
     [[Header                                        ][Includes                                           ]]
+    [[`<boost/range/split_at.hpp>`                  ][__split_at__]]
+    [[`<boost/range/as_container.hpp>`              ][__as_container__]]
     [[`<boost/range/regular.hpp>`                   ][__regular__]]
     [[`<boost/range/adaptor/regular_operator.hpp>`  ][__range_adaptors_regular_operator__]]
+    [[`<boost/range/traversal.hpp>`                 ][__traversal__]]
 ]
 [endsect]
 
