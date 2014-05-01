@@ -3,7 +3,7 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section adjacent_zipped]
+[section:adjacent_zipped adjacent_zipped]
 
 `adjacent_zipped`, applies to the base range, returns a range of tuples consist of adjacent elements.
 
@@ -17,38 +17,10 @@
 * [*Range Return Type:] boost::adjacent_zip_range<Range>
 * [*Returned Range Category:] The minimum of the range category of `rng` and __bidirectional_range__
 
-[heading Header]
-``
-#include <boost/range/adaptor/adjacent_zipped.hpp>
-``
-
-[heading Associative Header]
-``
-#include <boost/range/adaptor/dropped.hpp>
-``
-
-[heading Example]
-``
-#include <vector>
-#include <boost/assign/list_of.hpp>
-#include <boost/range/adaptor/adjacent_zipped.hpp>
-#include <boost/range/algorithm/for_each.hpp>
-#include <boost/tuple/tuple_io.hpp>
-
-using namespace boost::adaptors;
-
-void disp(const boost::tuple<int, int>& t)
-{
-    std::cout << t << std::endl;
-}
-
-int main()
-{
-    const std::vector<int> v = boost::assign::list_of(1)(2)(3)(4)(5);
-
-    boost::for_each(v | adjacent_zipped, disp);
-}
-``
+[section:adjacent_zipped_example adjacent_zipped example]
+[import ../../../test/adaptor_test/adjacent_zipped_example.cpp]
+[adjacent_zipped_example]
+[endsect]
 
 This would produce the output:
 ``
