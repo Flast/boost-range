@@ -3,7 +3,7 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section at]
+[section:at at]
 
 `at` returns the N-th referent from the beginning of the range.
 
@@ -17,21 +17,7 @@
 * [*Range Category:] __random_access_range__
 * [*Range Return Type:] `boost::range_reference<Range>::type`
 
-[heading Header]
-``
-#include <boost/range/access/at.hpp>
-``
-or
-``
-#include <boost/range/access.hpp>
-``
-
-[heading Namespace]
-``
-boost::range::access
-``
-
-[heading Example]
+[h4 Example]
 
 ``
 #include <iostream>
@@ -65,5 +51,5 @@ This would produce the output:
 4
 3 1 5 
 ``
-[endsect]
 
+[endsect]

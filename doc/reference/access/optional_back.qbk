@@ -3,7 +3,7 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section optional_back]
+[section:optional_back optional_back]
 
 `optional_back` returns the last referent in the range.
 This accessor returns `boost::optional<T&>`. If the given range isn't empty, it returns the last element wrapped with `boost::optional`. Otherwise, it returns `boost::none`.
@@ -17,21 +17,7 @@ This accessor returns `boost::optional<T&>`. If the given range isn't empty, it 
 * [*Range Category:] __bidirectional_range__
 * [*Range Return Type:] `boost::optional<boost::range_reference<Range>::type>`
 
-[heading Header]
-``
-#include <boost/range/access/back.hpp>
-``
-or
-``
-#include <boost/range/access.hpp>
-``
-
-[heading Namespace]
-``
-boost::range::access
-``
-
-[heading Example]
+[h4 Example]
 
 ``
 #include <iostream>
@@ -62,5 +48,5 @@ This would produce the output:
 ``
 2
 ``
-[endsect]
 
+[endsect]

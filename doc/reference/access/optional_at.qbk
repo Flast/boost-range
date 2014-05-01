@@ -3,7 +3,7 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section optional_at]
+[section:optional_at optional_at]
 
 `optional_at` returns the N-th referent from the beginning of the range.
 This accessor returns `boost::optional<T&>`. If N-th element exists, returns the element wrapped with `boost::optional`. Otherwise, it returns `boost::none`.
@@ -17,21 +17,7 @@ This accessor returns `boost::optional<T&>`. If N-th element exists, returns the
 * [*Range Category:] __random_access_range__
 * [*Range Return Type:] `boost::optional<boost::range_reference<Range>::type>`
 
-[heading Header]
-``
-#include <boost/range/access/at.hpp>
-``
-or
-``
-#include <boost/range/access.hpp>
-``
-
-[heading Namespace]
-``
-boost::range::access
-``
-
-[heading Example]
+[h4 Example]
 
 ``
 #include <iostream>
@@ -60,5 +46,5 @@ This would produce the output:
 ``
 2
 ``
-[endsect]
 
+[endsect]
