@@ -17,7 +17,6 @@
 [include reference/algorithms.qbk]
 [include reference/ranges.qbk]
 [include reference/access.qbk]
-[include reference/range_utility.qbk]
 [include reference/utilities.qbk]
 [include reference/extending.qbk]
 

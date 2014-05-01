@@ -456,5 +456,9 @@ Produces the output: `{0,1,2,3,4}`
 
 [endsect]
 
+[include utilities/regular.qbk]
+[include utilities/split_at.qbk]
+[include utilities/as_container.qbk]
+
 [endsect]
 
