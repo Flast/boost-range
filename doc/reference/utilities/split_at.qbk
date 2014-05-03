@@ -3,45 +3,33 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section:split_at split_at]
+[section:split_at Function split_at]
 
-[heading Prototype]
+`split_at` makes a pair of `rng | taken(n)` and `rng | dropped(n)`.
+
+[h4 Synopsis]
 
 ``
 template <class SinglePassRange>
-struct split_at_result {
-	typedef std::pair<TakenRange, DroppedRange> type;
+struct split_at_result
+{
+    typedef std::pair<TakenRange, DroppedRange> type;
 };
 
 template <class SinglePassRange>
 typename split_at_result<SinglePassRange>::type
-	split_at(SinglePassRange& rng,
-			 typename boost::range_difference<SinglePassRange>::type n);
+    split_at(SinglePassRange& rng,
+             typename boost::range_difference<SinglePassRange>::type n);
 
 template <class SinglePassRange>
 typename split_at_result<const SinglePassRange>::type
-	split_at(const SinglePassRange& rng,
-			 typename boost::range_difference<SinglePassRange>::type n);
+    split_at(const SinglePassRange& rng,
+             typename boost::range_difference<SinglePassRange>::type n);
 ``
 
-[heading Namespace]
+* [*Return:] `make_pair(rng | taken(n), rng | dropped(n));`
 
-`boost` or `boost::range`.
-
-[heading Description]
-
-`split_at` makes a pair of `rng | taken(n)` and `rng | dropped(n)`.
-
-[heading Header]
-``
-<boost/range/split_at.hpp>
-``
-
-[heading Return]
-`make_pair(rng | taken(n), rng | dropped(n));`
-
-[heading Example]
-
+[h4 Example]
 ``
 #include <boost/range/split_at.hpp>
 #include <boost/range/algorithm/for_each.hpp>

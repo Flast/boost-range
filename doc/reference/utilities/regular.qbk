@@ -3,36 +3,21 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section:regular regular]
+[section:regular Function regular]
 
-[heading Prototype]
+__boost_lambda__ functor and C++11 Lambda Expression are neither __default_constructible__ nor __assignable__. That is the reason why a certain iterator containing such a functor doesn't meet even the requirement of Input Iterator concept. Therefore, to meet that requirement, `regular` converts `f` into a __regular__ concept.
+
+[h4 Synopsis]
 
 ``
 template <class F>
 RegularFunctorType regular(F f)
 ``
 
-[heading Namespace]
+* [*Requirements:] F is __copy_constructible__.
+* [*heading Returned Type:] __polymorphic_function_object__ is __default_constructible__, __assignable__, __less_than_comparable__ and __equality_comparable__. Relational operator of the return type tests for pointer equality.
 
-`boost` or `boost::range`.
-
-[heading Description]
-
-Boost.Lambda functor and C++11 Lambda Expression are neither __default_constructible__ nor __assignable__. That is the reason why a certain iterator containing such a functor doesn't meet even the requirement of Input Iterator concept. Therefore, to meet that requirement, `regular` converts `f` into a __regular__ concept.
-
-[heading Requirements]
-
-F is __copy_constructible__.
-
-[heading Header]
-``
-<boost/range/regular.hpp>
-``
-
-[heading Returned Type]
-__polymorphic_function_object__ is __default_constructible__, __assignable__, __less_than_comparable__ and __equality_comparable__. Relational operator of the return type tests for pointer equality.
-
-[heading Example]
+[h4 Example]
 
 ``
 #include <iostream>
