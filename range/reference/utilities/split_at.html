@@ -1,13 +1,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-<title>split_at</title>
+<title>Function split_at</title>
 <link rel="stylesheet" href="../../.././doc/src/boostbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
 <link rel="home" href="../../../index.html" title="Chapter&#160;1.&#160;Range 2.0 with Extension">
-<link rel="up" href="../range_utility.html" title="Range Utilities">
-<link rel="prev" href="regular.html" title="regular">
-<link rel="next" href="../utilities.html" title="Utilities">
+<link rel="up" href="../utilities.html" title="Utilities">
+<link rel="prev" href="regular.html" title="Function regular">
+<link rel="next" href="as_container.html" title="as_container">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table cellpadding="2" width="100%"><tr>
@@ -20,46 +20,12 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="regular.html"><img src="../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../range_utility.html"><img src="../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="../utilities.html"><img src="../../.././doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="regular.html"><img src="../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../utilities.html"><img src="../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="as_container.html"><img src="../../.././doc/src/images/next.png" alt="Next"></a>
 </div>
 <div class="section">
 <div class="titlepage"><div><div><h4 class="title">
-<a name="range.reference.range_utility.split_at"></a><a class="link" href="split_at.html" title="split_at">split_at</a>
+<a name="range.reference.utilities.split_at"></a><a class="link" href="split_at.html" title="Function split_at">Function split_at</a>
 </h4></div></div></div>
-<h6>
-<a name="range.reference.range_utility.split_at.h0"></a>
-          <span><a name="range.reference.range_utility.split_at.prototype"></a></span><a class="link" href="split_at.html#range.reference.range_utility.split_at.prototype">Prototype</a>
-        </h6>
-<p>
-</p>
-<pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;</span>
-<span class="keyword">struct</span> <span class="identifier">split_at_result</span> <span class="special">{</span>
-	<span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span><span class="identifier">TakenRange</span><span class="special">,</span> <span class="identifier">DroppedRange</span><span class="special">&gt;</span> <span class="identifier">type</span><span class="special">;</span>
-<span class="special">};</span>
-
-<span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;</span>
-<span class="keyword">typename</span> <span class="identifier">split_at_result</span><span class="special">&lt;</span><span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span>
-	<span class="identifier">split_at</span><span class="special">(</span><span class="identifier">SinglePassRange</span><span class="special">&amp;</span> <span class="identifier">rng</span><span class="special">,</span>
-			 <span class="keyword">typename</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">range_difference</span><span class="special">&lt;</span><span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span> <span class="identifier">n</span><span class="special">);</span>
-
-<span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;</span>
-<span class="keyword">typename</span> <span class="identifier">split_at_result</span><span class="special">&lt;</span><span class="keyword">const</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span>
-	<span class="identifier">split_at</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">SinglePassRange</span><span class="special">&amp;</span> <span class="identifier">rng</span><span class="special">,</span>
-			 <span class="keyword">typename</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">range_difference</span><span class="special">&lt;</span><span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span> <span class="identifier">n</span><span class="special">);</span>
-</pre>
-<p>
-        </p>
-<h6>
-<a name="range.reference.range_utility.split_at.h1"></a>
-          <span><a name="range.reference.range_utility.split_at.namespace"></a></span><a class="link" href="split_at.html#range.reference.range_utility.split_at.namespace">Namespace</a>
-        </h6>
-<p>
-          <code class="computeroutput"><span class="identifier">boost</span></code> or <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">range</span></code>.
-        </p>
-<h6>
-<a name="range.reference.range_utility.split_at.h2"></a>
-          <span><a name="range.reference.range_utility.split_at.description"></a></span><a class="link" href="split_at.html#range.reference.range_utility.split_at.description">Description</a>
-        </h6>
 <p>
           <code class="computeroutput"><span class="identifier">split_at</span></code> makes a pair of
           <code class="computeroutput"><span class="identifier">rng</span> <span class="special">|</span>
@@ -67,27 +33,38 @@
           <code class="computeroutput"><span class="identifier">rng</span> <span class="special">|</span>
           <span class="identifier">dropped</span><span class="special">(</span><span class="identifier">n</span><span class="special">)</span></code>.
         </p>
-<h6>
-<a name="range.reference.range_utility.split_at.h3"></a>
-          <span><a name="range.reference.range_utility.split_at.header"></a></span><a class="link" href="split_at.html#range.reference.range_utility.split_at.header">Header</a>
-        </h6>
+<h5>
+<a name="range.reference.utilities.split_at.h0"></a>
+          <span><a name="range.reference.utilities.split_at.synopsis"></a></span><a class="link" href="split_at.html#range.reference.utilities.split_at.synopsis">Synopsis</a>
+        </h5>
 <p>
 </p>
-<pre class="programlisting"><span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">split_at</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<pre class="programlisting"><span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;</span>
+<span class="keyword">struct</span> <span class="identifier">split_at_result</span>
+<span class="special">{</span>
+    <span class="keyword">typedef</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">pair</span><span class="special">&lt;</span><span class="identifier">TakenRange</span><span class="special">,</span> <span class="identifier">DroppedRange</span><span class="special">&gt;</span> <span class="identifier">type</span><span class="special">;</span>
+<span class="special">};</span>
+
+<span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;</span>
+<span class="keyword">typename</span> <span class="identifier">split_at_result</span><span class="special">&lt;</span><span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span>
+    <span class="identifier">split_at</span><span class="special">(</span><span class="identifier">SinglePassRange</span><span class="special">&amp;</span> <span class="identifier">rng</span><span class="special">,</span>
+             <span class="keyword">typename</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">range_difference</span><span class="special">&lt;</span><span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span> <span class="identifier">n</span><span class="special">);</span>
+
+<span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">class</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;</span>
+<span class="keyword">typename</span> <span class="identifier">split_at_result</span><span class="special">&lt;</span><span class="keyword">const</span> <span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span>
+    <span class="identifier">split_at</span><span class="special">(</span><span class="keyword">const</span> <span class="identifier">SinglePassRange</span><span class="special">&amp;</span> <span class="identifier">rng</span><span class="special">,</span>
+             <span class="keyword">typename</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">range_difference</span><span class="special">&lt;</span><span class="identifier">SinglePassRange</span><span class="special">&gt;::</span><span class="identifier">type</span> <span class="identifier">n</span><span class="special">);</span>
 </pre>
 <p>
         </p>
-<h6>
-<a name="range.reference.range_utility.split_at.h4"></a>
-          <span><a name="range.reference.range_utility.split_at.return"></a></span><a class="link" href="split_at.html#range.reference.range_utility.split_at.return">Return</a>
-        </h6>
-<p>
-          <code class="computeroutput"><span class="identifier">make_pair</span><span class="special">(</span><span class="identifier">rng</span> <span class="special">|</span> <span class="identifier">taken</span><span class="special">(</span><span class="identifier">n</span><span class="special">),</span> <span class="identifier">rng</span> <span class="special">|</span> <span class="identifier">dropped</span><span class="special">(</span><span class="identifier">n</span><span class="special">));</span></code>
-        </p>
-<h6>
-<a name="range.reference.range_utility.split_at.h5"></a>
-          <span><a name="range.reference.range_utility.split_at.example"></a></span><a class="link" href="split_at.html#range.reference.range_utility.split_at.example">Example</a>
-        </h6>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+              <span class="bold"><strong>Return:</strong></span> <code class="computeroutput"><span class="identifier">make_pair</span><span class="special">(</span><span class="identifier">rng</span> <span class="special">|</span> <span class="identifier">taken</span><span class="special">(</span><span class="identifier">n</span><span class="special">),</span> <span class="identifier">rng</span>
+              <span class="special">|</span> <span class="identifier">dropped</span><span class="special">(</span><span class="identifier">n</span><span class="special">));</span></code>
+            </li></ul></div>
+<h5>
+<a name="range.reference.utilities.split_at.h1"></a>
+          <span><a name="range.reference.utilities.split_at.example"></a></span><a class="link" href="split_at.html#range.reference.utilities.split_at.example">Example</a>
+        </h5>
 <p>
 </p>
 <pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">split_at</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
@@ -142,7 +119,7 @@
 </tr></table>
 <hr>
 <div class="spirit-nav">
-<a accesskey="p" href="regular.html"><img src="../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../range_utility.html"><img src="../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="../utilities.html"><img src="../../.././doc/src/images/next.png" alt="Next"></a>
+<a accesskey="p" href="regular.html"><img src="../../.././doc/src/images/prev.png" alt="Prev"></a><a accesskey="u" href="../utilities.html"><img src="../../.././doc/src/images/up.png" alt="Up"></a><a accesskey="h" href="../../../index.html"><img src="../../.././doc/src/images/home.png" alt="Home"></a><a accesskey="n" href="as_container.html"><img src="../../.././doc/src/images/next.png" alt="Next"></a>
 </div>
 </body>
 </html>
