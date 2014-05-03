@@ -13,7 +13,7 @@
     [[Function] [`container c = boost::as_container(rng)`]]
 ]
 
-[heading Semantics]
+[h4 Semantics]
 
 ``
 container c = rng | boost::as_container;
@@ -23,16 +23,7 @@ This experession's semantics is follow:
 container c(boost::begin(rng), boost::end(rng));
 ``
 
-[heading Namespace]
-
-`boost`.
-
-[heading Header]
-``
-<boost/range/as_container.hpp>
-``
-
-[heading Example]
+[h4 Example]
 
 ``
 #include <iostream>
