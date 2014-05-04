@@ -7,29 +7,41 @@
 // Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 
-#include <iostream>
-#include <vector>
 #include <boost/lambda/lambda.hpp>
-#include <boost/range/algorithm/for_each.hpp>
+#include <boost/range/algorithm/copy.hpp>
 #include <boost/range/adaptor/filtered.hpp>
 #include <boost/range/adaptor/transformed.hpp>
-#include <boost/range/adaptor/memoized.hpp>
 #include <boost/range/experimental/adaptor/tapped.hpp>
+#include <boost/assign.hpp>
+#include <iterator>
+#include <iostream>
+#include <vector>
 
-void print(int x)
+struct add
 {
-    std::cout << x << std::endl;
-}
+    typedef int result_type;
+    int operator()( int x ) const { return x + 1; }
+};
 
-int main()
+struct is_even
 {
-    std::vector<int> v = {1, 2, 3, 4, 5};
+    bool operator()( int x ) { return x % 2 == 0; }
+};
+
+int main(int argc, const char* argv[])
+{
+    using namespace boost::assign;
+    using namespace boost::adaptors;
+
+    std::vector<int> input;
+    input += 1,2,3,4,5;
 
     using boost::lambda::_1;
-    boost::for_each(v |+ boost::adaptors::transformed(_1 + 1)
-                      |+ boost::adaptors::tapped(std::cout << _1 << " is tapped\n")
-                      |+ boost::adaptors::filtered(_1 % 2 == 0),
-                    print);
+    boost::copy(
+        input | transformed(add())
+              |+ tapped(std::cout << _1 << " is tapped\n")
+              | filtered(is_even()),
+        std::ostream_iterator<int>(std::cout, "\n"));
 }
 /*
 output:

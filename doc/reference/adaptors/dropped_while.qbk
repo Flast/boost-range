@@ -3,14 +3,14 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section dropped_while]
+[section:dropped_while dropped_while]
 
 `dropped_while` drops elements from the base range while a predicate satisfies.
 
 [table
     [[Syntax] [Code]]
     [[Pipe] [`rng | boost::adaptors::dropped_while(pred)`]]
-	[[Regular Operator] [`rng |+ boost::adaptors::dropped_while(pred)`]]
+    [[Regular Operator] [`rng |+ boost::adaptors::dropped_while(pred)`]]
     [[Function] [`boost::adaptors::drop_while(rng, pred)`]]
 ]
 
@@ -19,40 +19,14 @@
 * [*Range Return Type:] boost::dropped_while_range<Range>
 * [*Returned Range Category:] the range category of `rng`
 
-[heading Header]
-``
-#include <boost/range/adaptor/dropped_while.hpp>
-``
-
-[heading Associative Header]
-``
-#include <boost/range/regular.hpp>
-``
-
-[heading Example]
-``
-#include <boost/range/adaptor/dropped_while.hpp>
-#include <boost/range/algorithm/for_each.hpp>
-#include <boost/assign/list_of.hpp>
-#include <iostream>
-#include <vector>
-
-void disp(int x) { std::cout << x << ' '; }
-bool is_even(int x) { return x % 2 == 0; }
-
-using namespace boost::adaptors;
-
-int main()
-{
-    const std::vector<int> v = boost::assign::list_of(2)(4)(6)(1)(3);
-
-    boost::for_each(v | dropped_while(is_even), disp);
-}
-``
+[section:dropped_while_example dropped_while example]
+[import ../../../test/adaptor_test/dropped_while_example.cpp]
+[dropped_while_example]
+[endsect]
 
 This would produce the output:
 ``
-1 3 
+1 3 8 
 ``
 
 [endsect]

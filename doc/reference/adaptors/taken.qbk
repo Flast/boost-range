@@ -3,7 +3,7 @@
     Distributed under the Boost Software License, Version 1.0.
     (See accompanying file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
 /]
-[section taken]
+[section:taken taken]
 
 `taken`, applied to the base range, returns the prefix of the range of length `n`.
 
@@ -18,35 +18,10 @@
 * [*Range Return Type:] boost::taken_range<Range>
 * [*Returned Range Category:] The minimum of the range category of `rng` and __bidirectional_range__
 
-[heading Header]
-``
-#include <boost/range/adaptor/taken.hpp>
-``
-
-[heading Associative Header]
-``
-#include <boost/range/adaptor/taken_while.hpp>
-``
-
-[heading Example]
-``
-#include <boost/range/adaptor/taken.hpp>
-#include <boost/range/algorithm/for_each.hpp>
-#include <boost/assign/list_of.hpp>
-#include <iostream>
-#include <vector>
-
-void disp(int x) { std::cout << x << ' '; }
-
-using namespace boost::adaptors;
-
-int main()
-{
-    const std::vector<int> v = boost::assign::list_of(3)(1)(4)(2)(5);
-
-    boost::for_each(v | taken(2), disp);
-}
-``
+[section:taken_example taken example]
+[import ../../../test/adaptor_test/taken_example.cpp]
+[taken_example]
+[endsect]
 
 This would produce the output:
 ``

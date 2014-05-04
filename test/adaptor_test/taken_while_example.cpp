@@ -2,40 +2,40 @@
 // via PStade Oven Library
 //
 // Copyright Kohei Takahashi 2014.
-// Copyright Akira Takahashi 2011-2012.
-// Copyright Shunsuke Sogame 2005-2007.
+// Copyright Akira Takahashi 2011.
 // Use, modification and distribution is subject to the Boost Software License,
 // Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at
 // http://www.boost.org/LICENSE_1_0.txt)
 //
-//[adjacent_zipped_example
-#include <boost/range/adaptor/adjacent_zipped.hpp>
+//[taken_while_example
+#include <boost/range/adaptor/taken_while.hpp>
 #include <boost/range/algorithm/copy.hpp>
-#include <boost/tuple/tuple_io.hpp>
 #include <boost/assign.hpp>
 #include <iterator>
 #include <iostream>
 #include <vector>
 
-int main(int argc, const char* argv[])
+struct is_even
+{
+    bool operator()( int x ) const { return x % 2 == 0; }
+};
+
+int main()
 {
     using namespace boost::assign;
     using namespace boost::adaptors;
 
     std::vector<int> input;
-    input += 1,2,3,4,5;
+    input += 2,4,6,1,3;
 
     boost::copy(
-        input | adjacent_zipped,
-        std::ostream_iterator<boost::tuple<int, int> >(std::cout, "\n"));
+        input | taken_while(is_even()),
+        std::ostream_iterator<int>(std::cout, " "));
 }
 //]
 
 /*
 output:
-(1 2)
-(2 3)
-(3 4)
-(4 5)
+2 4 6 
 */
 
