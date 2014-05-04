@@ -10,7 +10,7 @@
 [table
     [[Syntax] [Code]]
     [[Pipe] [`rng | boost::adaptors::dropped_while(pred)`]]
-	[[Regular Operator] [`rng |+ boost::adaptors::dropped_while(pred)`]]
+    [[Regular Operator] [`rng |+ boost::adaptors::dropped_while(pred)`]]
     [[Function] [`boost::adaptors::drop_while(rng, pred)`]]
 ]
 

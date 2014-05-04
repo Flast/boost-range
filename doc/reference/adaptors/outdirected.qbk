@@ -13,7 +13,6 @@
     [[Function] [`boost::adaptors::outdirect(r)`]]
 ]
 
-* [*Precondition:]  
 * [*Range Category:] __single_pass_range__
 * [*Range Return Type:] boost::outdirected_range<Range>
 * [*Returned Range Category:] The minimum of the range category of `rng` and __forward_range__
