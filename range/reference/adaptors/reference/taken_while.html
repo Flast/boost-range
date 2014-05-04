@@ -26,6 +26,8 @@
 <div class="titlepage"><div><div><h5 class="title">
 <a name="range.reference.adaptors.reference.taken_while"></a><a class="link" href="taken_while.html" title="taken_while">taken_while</a>
 </h5></div></div></div>
+<div class="toc"><dl><dt><span class="section"><a href="taken_while.html#range.reference.adaptors.reference.taken_while.taken_while_example">taken_while
+            example</a></span></dt></dl></div>
 <p>
             <code class="computeroutput"><span class="identifier">taken_while</span></code>, applied
             to a predicate and the base range, returns the longest prefix (possibly
@@ -109,53 +111,41 @@
                 Range</a>
               </li>
 </ul></div>
-<h6>
-<a name="range.reference.adaptors.reference.taken_while.h0"></a>
-            <span><a name="range.reference.adaptors.reference.taken_while.header"></a></span><a class="link" href="taken_while.html#range.reference.adaptors.reference.taken_while.header">Header</a>
-          </h6>
+<div class="section">
+<div class="titlepage"><div><div><h6 class="title">
+<a name="range.reference.adaptors.reference.taken_while.taken_while_example"></a><a class="link" href="taken_while.html#range.reference.adaptors.reference.taken_while.taken_while_example" title="taken_while example">taken_while
+            example</a>
+</h6></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">taken_while</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-</pre>
-<p>
-          </p>
-<h6>
-<a name="range.reference.adaptors.reference.taken_while.h1"></a>
-            <span><a name="range.reference.adaptors.reference.taken_while.associative_header"></a></span><a class="link" href="taken_while.html#range.reference.adaptors.reference.taken_while.associative_header">Associative
-            Header</a>
-          </h6>
-<p>
-</p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">regular</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-</pre>
-<p>
-          </p>
-<h6>
-<a name="range.reference.adaptors.reference.taken_while.h2"></a>
-            <span><a name="range.reference.adaptors.reference.taken_while.example"></a></span><a class="link" href="taken_while.html#range.reference.adaptors.reference.taken_while.example">Example</a>
-          </h6>
-<p>
-</p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">taken_while</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">for_each</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">assign</span><span class="special">/</span><span class="identifier">list_of</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">copy</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">assign</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iterator</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">vector</span><span class="special">&gt;</span>
 
-<span class="keyword">void</span> <span class="identifier">disp</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">x</span><span class="special">)</span> <span class="special">{</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">x</span> <span class="special">&lt;&lt;</span> <span class="char">' '</span><span class="special">;</span> <span class="special">}</span>
-<span class="keyword">bool</span> <span class="identifier">is_even</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">x</span><span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">x</span> <span class="special">%</span> <span class="number">2</span> <span class="special">==</span> <span class="number">0</span><span class="special">;</span> <span class="special">}</span>
-
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">;</span>
+<span class="keyword">struct</span> <span class="identifier">is_even</span>
+<span class="special">{</span>
+    <span class="keyword">bool</span> <span class="keyword">operator</span><span class="special">()(</span> <span class="keyword">int</span> <span class="identifier">x</span> <span class="special">)</span> <span class="keyword">const</span> <span class="special">{</span> <span class="keyword">return</span> <span class="identifier">x</span> <span class="special">%</span> <span class="number">2</span> <span class="special">==</span> <span class="number">0</span><span class="special">;</span> <span class="special">}</span>
+<span class="special">};</span>
 
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
 <span class="special">{</span>
-    <span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">assign</span><span class="special">::</span><span class="identifier">list_of</span><span class="special">(</span><span class="number">2</span><span class="special">)(</span><span class="number">4</span><span class="special">)(</span><span class="number">6</span><span class="special">)(</span><span class="number">1</span><span class="special">)(</span><span class="number">3</span><span class="special">);</span>
+    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">assign</span><span class="special">;</span>
+    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">;</span>
 
-    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">v</span> <span class="special">|</span> <span class="identifier">taken_while</span><span class="special">(</span><span class="identifier">is_even</span><span class="special">),</span> <span class="identifier">disp</span><span class="special">);</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="identifier">input</span><span class="special">;</span>
+    <span class="identifier">input</span> <span class="special">+=</span> <span class="number">2</span><span class="special">,</span><span class="number">4</span><span class="special">,</span><span class="number">6</span><span class="special">,</span><span class="number">1</span><span class="special">,</span><span class="number">3</span><span class="special">;</span>
+
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span>
+        <span class="identifier">input</span> <span class="special">|</span> <span class="identifier">taken_while</span><span class="special">(</span><span class="identifier">is_even</span><span class="special">()),</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream_iterator</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span><span class="special">,</span> <span class="string">" "</span><span class="special">));</span>
 <span class="special">}</span>
 </pre>
 <p>
-          </p>
+            </p>
+</div>
 <p>
             This would produce the output:
 </p>

@@ -26,6 +26,8 @@
 <div class="titlepage"><div><div><h5 class="title">
 <a name="range.reference.adaptors.reference.memoized"></a><a class="link" href="memoized.html" title="memoized">memoized</a>
 </h5></div></div></div>
+<div class="toc"><dl><dt><span class="section"><a href="memoized.html#range.reference.adaptors.reference.memoized.memoized_example">memoized
+            example</a></span></dt></dl></div>
 <p>
             <code class="computeroutput"><span class="identifier">memoized</span></code> returns a range
             whose values are cached for speed, preparing for repeated dereferences.
@@ -92,54 +94,51 @@
                 Range</a>
               </li>
 </ul></div>
-<h6>
-<a name="range.reference.adaptors.reference.memoized.h0"></a>
-            <span><a name="range.reference.adaptors.reference.memoized.header"></a></span><a class="link" href="memoized.html#range.reference.adaptors.reference.memoized.header">Header</a>
-          </h6>
+<div class="section">
+<div class="titlepage"><div><div><h6 class="title">
+<a name="range.reference.adaptors.reference.memoized.memoized_example"></a><a class="link" href="memoized.html#range.reference.adaptors.reference.memoized.memoized_example" title="memoized example">memoized
+            example</a>
+</h6></div></div></div>
 <p>
 </p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">memoized</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-</pre>
-<p>
-          </p>
-<h6>
-<a name="range.reference.adaptors.reference.memoized.h1"></a>
-            <span><a name="range.reference.adaptors.reference.memoized.example"></a></span><a class="link" href="memoized.html#range.reference.adaptors.reference.memoized.example">Example</a>
-          </h6>
-<p>
-</p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">transformed</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">transformed</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">filtered</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">memoized</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">for_each</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">copy</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iterator</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">vector</span><span class="special">&gt;</span>
 
-<span class="keyword">int</span> <span class="identifier">add</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">x</span><span class="special">)</span>
+<span class="keyword">struct</span> <span class="identifier">add</span>
 <span class="special">{</span>
-    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"add function : "</span> <span class="special">&lt;&lt;</span> <span class="identifier">x</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
-    <span class="keyword">return</span> <span class="identifier">x</span> <span class="special">+</span> <span class="number">1</span><span class="special">;</span>
-<span class="special">}</span>
+    <span class="keyword">typedef</span> <span class="keyword">int</span> <span class="identifier">result_type</span><span class="special">;</span>
+    <span class="keyword">int</span> <span class="keyword">operator</span><span class="special">()(</span> <span class="keyword">int</span> <span class="identifier">x</span> <span class="special">)</span> <span class="keyword">const</span>
+    <span class="special">{</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="string">"add function : "</span> <span class="special">&lt;&lt;</span> <span class="identifier">x</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+        <span class="keyword">return</span> <span class="identifier">x</span> <span class="special">+</span> <span class="number">1</span><span class="special">;</span>
+    <span class="special">}</span>
+<span class="special">};</span>
 
-<span class="keyword">bool</span> <span class="identifier">pred</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">x</span><span class="special">)</span>
+<span class="keyword">struct</span> <span class="identifier">true_</span>
 <span class="special">{</span>
-    <span class="keyword">return</span> <span class="keyword">true</span><span class="special">;</span>
-<span class="special">}</span>
-
-<span class="keyword">void</span> <span class="identifier">disp</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">x</span><span class="special">)</span>
-<span class="special">{</span>
-    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">x</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
-<span class="special">}</span>
+    <span class="keyword">bool</span> <span class="keyword">operator</span><span class="special">()(</span> <span class="keyword">int</span> <span class="identifier">x</span> <span class="special">)</span> <span class="special">{</span> <span class="keyword">return</span> <span class="keyword">true</span><span class="special">;</span> <span class="special">}</span>
+<span class="special">};</span>
 
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
 <span class="special">{</span>
     <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">;</span>
 
-    <span class="keyword">const</span> <span class="keyword">int</span> <span class="identifier">ar</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span><span class="number">1</span><span class="special">,</span> <span class="number">2</span><span class="special">,</span> <span class="number">3</span><span class="special">};</span>
-    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">ar</span> <span class="special">|</span> <span class="identifier">transformed</span><span class="special">(</span><span class="identifier">add</span><span class="special">)</span> <span class="special">|</span> <span class="identifier">memoized</span> <span class="special">|</span> <span class="identifier">filtered</span><span class="special">(</span><span class="identifier">pred</span><span class="special">),</span> <span class="identifier">disp</span><span class="special">);</span>
+    <span class="keyword">const</span> <span class="keyword">int</span> <span class="identifier">input</span><span class="special">[]</span> <span class="special">=</span> <span class="special">{</span><span class="number">1</span><span class="special">,</span><span class="number">2</span><span class="special">,</span><span class="number">3</span><span class="special">};</span>
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span>
+        <span class="identifier">input</span> <span class="special">|</span> <span class="identifier">transformed</span><span class="special">(</span><span class="identifier">add</span><span class="special">())</span>
+              <span class="special">|</span> <span class="identifier">memoized</span>
+              <span class="special">|</span> <span class="identifier">filtered</span><span class="special">(</span><span class="identifier">true_</span><span class="special">()),</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream_iterator</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span><span class="special">,</span> <span class="string">"\n"</span><span class="special">));</span>
 <span class="special">}</span>
 </pre>
 <p>
-          </p>
+            </p>
+</div>
 <p>
             This would produce the output:
 </p>
@@ -154,7 +153,7 @@
           </p>
 <p>
             If do not use <code class="computeroutput"><span class="identifier">memoized</span></code>,
-            <code class="computeroutput"><span class="identifier">add</span></code> function called twice.
+            <code class="computeroutput"><span class="identifier">add</span></code> functor called twice.
           </p>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>

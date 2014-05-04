@@ -26,6 +26,8 @@
 <div class="titlepage"><div><div><h5 class="title">
 <a name="range.reference.adaptors.reference.outdirected"></a><a class="link" href="outdirected.html" title="outdirected">outdirected</a>
 </h5></div></div></div>
+<div class="toc"><dl><dt><span class="section"><a href="outdirected.html#range.reference.adaptors.reference.outdirected.outdirected_example">outdirected
+            example</a></span></dt></dl></div>
 <p>
             <code class="computeroutput"><span class="identifier">outdirected</span></code> returns a
             range whose values are iterators of the base range.
@@ -77,9 +79,6 @@
 </table></div>
 <div class="itemizedlist"><ul class="itemizedlist" type="disc">
 <li class="listitem">
-                <span class="bold"><strong>Precondition:</strong></span>
-              </li>
-<li class="listitem">
                 <span class="bold"><strong>Range Category:</strong></span> <a class="link" href="../../../concepts/single_pass_range.html" title="Single Pass Range">Single
                 Pass Range</a>
               </li>
@@ -92,49 +91,54 @@
                 and <a class="link" href="../../../concepts/forward_range.html" title="Forward Range">Forward Range</a>
               </li>
 </ul></div>
-<h6>
-<a name="range.reference.adaptors.reference.outdirected.h0"></a>
-            <span><a name="range.reference.adaptors.reference.outdirected.header"></a></span><a class="link" href="outdirected.html#range.reference.adaptors.reference.outdirected.header">Header</a>
-          </h6>
-<p>
-</p>
-<pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">outdirected</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-</pre>
-<p>
-          </p>
-<h6>
-<a name="range.reference.adaptors.reference.outdirected.h1"></a>
-            <span><a name="range.reference.adaptors.reference.outdirected.example"></a></span><a class="link" href="outdirected.html#range.reference.adaptors.reference.outdirected.example">Example</a>
-          </h6>
+<div class="section">
+<div class="titlepage"><div><div><h6 class="title">
+<a name="range.reference.adaptors.reference.outdirected.outdirected_example"></a><a class="link" href="outdirected.html#range.reference.adaptors.reference.outdirected.outdirected_example" title="outdirected example">outdirected
+            example</a>
+</h6></div></div></div>
 <p>
 </p>
 <pre class="programlisting"><span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">outdirected</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">adaptor</span><span class="special">/</span><span class="identifier">indirected</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">sort</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">/</span><span class="identifier">copy</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">assign</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iterator</span><span class="special">&gt;</span>
 <span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">vector</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">assign</span><span class="special">/</span><span class="identifier">list_of</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">range</span><span class="special">/</span><span class="identifier">algorithm</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
-<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">boost</span><span class="special">/</span><span class="identifier">lambda</span><span class="special">/</span><span class="identifier">lambda</span><span class="special">.</span><span class="identifier">hpp</span><span class="special">&gt;</span>
+<span class="preprocessor">#include</span> <span class="special">&lt;</span><span class="identifier">iostream</span><span class="special">&gt;</span>
 
-<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">;</span>
-<span class="keyword">namespace</span> <span class="identifier">bll</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">lambda</span><span class="special">;</span>
-
-<span class="keyword">void</span> <span class="identifier">disp</span><span class="special">(</span><span class="keyword">int</span> <span class="identifier">x</span><span class="special">)</span> <span class="special">{</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">x</span> <span class="special">&lt;&lt;</span> <span class="char">' '</span><span class="special">;</span> <span class="special">}</span>
+<span class="keyword">struct</span> <span class="identifier">indirect_less</span>
+<span class="special">{</span>
+    <span class="keyword">template</span> <span class="special">&lt;</span><span class="keyword">typename</span> <span class="identifier">I</span><span class="special">&gt;</span>
+    <span class="keyword">bool</span> <span class="keyword">operator</span><span class="special">()(</span> <span class="identifier">I</span> <span class="identifier">l</span><span class="special">,</span> <span class="identifier">I</span> <span class="identifier">r</span> <span class="special">)</span> <span class="keyword">const</span> <span class="special">{</span> <span class="keyword">return</span> <span class="special">*</span><span class="identifier">l</span> <span class="special">&lt;</span> <span class="special">*</span><span class="identifier">r</span><span class="special">;</span> <span class="special">}</span>
+<span class="special">};</span>
 
 <span class="keyword">int</span> <span class="identifier">main</span><span class="special">()</span>
 <span class="special">{</span>
-	<span class="keyword">const</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="identifier">v</span> <span class="special">=</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">assign</span><span class="special">::</span><span class="identifier">list_of</span><span class="special">(</span><span class="number">3</span><span class="special">)(</span><span class="number">1</span><span class="special">)(</span><span class="number">4</span><span class="special">)(</span><span class="number">2</span><span class="special">)(</span><span class="number">5</span><span class="special">);</span>
+    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">assign</span><span class="special">;</span>
+    <span class="keyword">using</span> <span class="keyword">namespace</span> <span class="identifier">boost</span><span class="special">::</span><span class="identifier">adaptors</span><span class="special">;</span>
 
-	<span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;::</span><span class="identifier">const_iterator</span><span class="special">&gt;</span> <span class="identifier">iters</span><span class="special">;</span>
-	<span class="identifier">boost</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span><span class="identifier">v</span> <span class="special">|</span> <span class="identifier">outdirected</span><span class="special">,</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">back_inserter</span><span class="special">(</span><span class="identifier">iters</span><span class="special">));</span>
-	<span class="identifier">boost</span><span class="special">::</span><span class="identifier">sort</span><span class="special">(</span><span class="identifier">iters</span><span class="special">,</span> <span class="special">*</span><span class="identifier">bll</span><span class="special">::</span><span class="identifier">_1</span> <span class="special">&lt;</span> <span class="special">*</span><span class="identifier">bll</span><span class="special">::</span><span class="identifier">_2</span><span class="special">);</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;</span> <span class="identifier">input</span><span class="special">;</span>
+    <span class="identifier">input</span> <span class="special">+=</span> <span class="number">3</span><span class="special">,</span><span class="number">1</span><span class="special">,</span><span class="number">4</span><span class="special">,</span><span class="number">2</span><span class="special">,</span><span class="number">5</span><span class="special">;</span>
 
-	<span class="identifier">boost</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">iters</span> <span class="special">|</span> <span class="identifier">indirected</span><span class="special">,</span> <span class="identifier">disp</span><span class="special">);</span>
-	<span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
-	<span class="identifier">boost</span><span class="special">::</span><span class="identifier">for_each</span><span class="special">(</span><span class="identifier">v</span><span class="special">,</span> <span class="identifier">disp</span><span class="special">);</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">vector</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;::</span><span class="identifier">const_iterator</span><span class="special">&gt;</span> <span class="identifier">iinput</span><span class="special">;</span>
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span>
+        <span class="identifier">input</span> <span class="special">|</span> <span class="identifier">outdirected</span><span class="special">,</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">back_inserter</span><span class="special">(</span><span class="identifier">iinput</span><span class="special">));</span>
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">sort</span><span class="special">(</span><span class="identifier">iinput</span><span class="special">,</span> <span class="identifier">indirect_less</span><span class="special">());</span>
+
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span>
+        <span class="identifier">iinput</span> <span class="special">|</span> <span class="identifier">indirected</span><span class="special">,</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream_iterator</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span><span class="special">,</span> <span class="string">" "</span><span class="special">));</span>
+    <span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span> <span class="special">&lt;&lt;</span> <span class="identifier">std</span><span class="special">::</span><span class="identifier">endl</span><span class="special">;</span>
+    <span class="identifier">boost</span><span class="special">::</span><span class="identifier">copy</span><span class="special">(</span>
+        <span class="identifier">input</span><span class="special">,</span>
+        <span class="identifier">std</span><span class="special">::</span><span class="identifier">ostream_iterator</span><span class="special">&lt;</span><span class="keyword">int</span><span class="special">&gt;(</span><span class="identifier">std</span><span class="special">::</span><span class="identifier">cout</span><span class="special">,</span> <span class="string">" "</span><span class="special">));</span>
 <span class="special">}</span>
 </pre>
 <p>
-          </p>
+            </p>
+</div>
 <p>
             This would produce the output:
 </p>
