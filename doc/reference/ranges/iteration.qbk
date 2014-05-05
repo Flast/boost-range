@@ -12,25 +12,12 @@ template <class Init, class Next>
 iterator_range<detail::iteration_iterator<Init, Next> > iteration(const Init& init, Next next)
 ``
 
-[heading Namespace]
-
-`boost` or `boost::range`.
-
 [heading Description]
 
 `iteration` makes an infinite __single_pass_range__ where the first item is calculated by applying the function on the first argument, the second item by applying the function on the previous result and so on.
 
 Note:
 Strictly speaking, the range concept doesn't allow an infinite range. So assume here the end iterator is reachable from the begin iterator in the googolplex number of increments.
-
-[heading Header]
-``
-<boost/range/iteration.hpp>
-``
-or
-``
-<boost/range/range/iteration.hpp>
-``
 
 [heading Precondition]
 

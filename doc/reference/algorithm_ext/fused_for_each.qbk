@@ -15,10 +15,6 @@ template <class SinglePassRange, class UnaryFunction>
 void fused_for_each(const SinglePassRange& rng, UnaryFunction f);
 ``
 
-[heading Namespace]
-
-`boost` or `boost::range`.
-
 [heading Description]
 
 `fused_for_each` is for_each which expands tuple and applies function that has parameters of each element of the tuple.

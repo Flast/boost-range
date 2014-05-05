@@ -9,25 +9,12 @@
 
 ``
 iterator_range<filesystem::recursive_directory_iterator>
-  recursive_directory_range(const filesystem::path& p);
+    recursive_directory_range(const filesystem::path& p);
 ``
-
-[heading Namespace]
-
-`boost` or `boost::range`.
 
 [heading Description]
 
 `recursive_directory_range` is a __single_pass_range__ which accesses the contents of a recursive directory.
-
-[heading Header]
-``
-<boost/range/directory_range.hpp>
-``
-or
-``
-<boost/range/range/directory_range.hpp>
-``
 
 [heading Returned Range Category]
 __single_pass_range__
