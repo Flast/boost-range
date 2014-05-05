@@ -16,6 +16,7 @@
     [[`<boost/range/difference_type.hpp>` ] [__range_difference__       ] [__forward_range__       ]]
     [[`<boost/range/pointer.hpp>`         ] [__range_pointer__          ] [-]]
     [[`<boost/range/category.hpp>`        ] [__range_category__         ] [-]]
+    [[`<boost/range/traversal.hpp>`       ] [__range_traversal__        ] [-]]
     [[`<boost/range/reverse_iterator.hpp>`] [__range_reverse_iterator__ ] [__bidirectional_range__ ]]
     [[`<boost/range/begin.hpp>`           ] [__begin__ and __const_begin__ ] [__single_pass_range__   ]]
     [[`<boost/range/end.hpp>`             ] [__end__ and __const_end__  ] [__single_pass_range__   ]]
@@ -88,7 +89,6 @@
     [[`<boost/range/as_container.hpp>`              ][__as_container__]]
     [[`<boost/range/regular.hpp>`                   ][__regular__]]
     [[`<boost/range/adaptor/regular_operator.hpp>`  ][__range_adaptors_regular_operator__]]
-    [[`<boost/range/traversal.hpp>`                 ][__traversal__]]
 ]
 [endsect]
 

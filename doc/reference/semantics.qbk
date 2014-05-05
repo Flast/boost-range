@@ -59,6 +59,11 @@
         [compile time]
     ]
     [
+        [`range_traversal<X>::type`]
+        [`boost::iterator_traversal<range_iterator<X>::type>::type`]
+        [compile time]
+    ]
+    [
         [`range_difference<X>::type`]
         [`boost::iterator_category<range_iterator<X>::type>::type`]
         [compile time]
