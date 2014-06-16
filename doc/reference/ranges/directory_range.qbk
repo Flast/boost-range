@@ -9,25 +9,12 @@
 
 ``
 iterator_range<filesystem::directory_iterator>
-  directory_range(const filesystem::path& p);
+    directory_range(const filesystem::path& p);
 ``
-
-[heading Namespace]
-
-`boost` or `boost::range`.
 
 [heading Description]
 
 `directory_range` is a __single_pass_range__ which accesses the contents of a directory.
-
-[heading Header]
-``
-<boost/range/directory_range.hpp>
-``
-or
-``
-<boost/range/range/directory_range.hpp>
-``
 
 [heading Returned Range Category]
 __single_pass_range__
