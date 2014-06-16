@@ -16,6 +16,7 @@
 #endif
 
 #include <boost/range/config.hpp>
+#include <boost/range/range_fwd.hpp>
 #include <boost/range/mutable_iterator.hpp>
 #include <boost/range/const_iterator.hpp>
 #include <boost/type_traits/is_const.hpp>
@@ -47,7 +48,7 @@ namespace boost
     
 #endif  
 
-    template< typename C >
+    template< typename C, typename Enabler=void >
     struct range_iterator
     {
 #if BOOST_WORKAROUND(BOOST_MSVC, == 1310)
