@@ -168,7 +168,7 @@ private:
 
 public:
     typedef typename boost::pointee<MemoPtr>::type memo_type;
- 
+
     explicit memoize_iterator()
     { }
 

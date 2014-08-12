@@ -11,6 +11,8 @@
 #define BOOST_RANGE_ACCESS_FRONT_INCLUDE
 
 #include <boost/config.hpp>
+#include <boost/concept_check.hpp>
+#include <boost/range/concepts.hpp>
 #include <boost/range/begin.hpp>
 #include <boost/range/empty.hpp>
 #include <boost/range/reference.hpp>
@@ -115,6 +117,7 @@ namespace boost {
         typename range_reference<SinglePassRange>::type
             operator|(SinglePassRange& rng, const front_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
             return f(rng);
         }
 
@@ -122,6 +125,7 @@ namespace boost {
         typename range_reference<const SinglePassRange>::type
             operator|(const SinglePassRange& rng, const front_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
             return f(rng);
         }
 
@@ -129,6 +133,7 @@ namespace boost {
         typename range_value<SinglePassRange>::type
             operator|(const SinglePassRange& rng, const value_front_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
             return f(rng);
         }
 
@@ -136,6 +141,7 @@ namespace boost {
         boost::optional<typename range_reference<SinglePassRange>::type>
             operator|(SinglePassRange& rng, const optional_front_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
             return f(rng);
         }
 
@@ -143,6 +149,7 @@ namespace boost {
         boost::optional<typename range_reference<const SinglePassRange>::type>
             operator|(const SinglePassRange& rng, const optional_front_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
             return f(rng);
         }
 

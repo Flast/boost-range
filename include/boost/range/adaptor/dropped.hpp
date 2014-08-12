@@ -32,6 +32,8 @@ namespace range_detail {
         typedef typename range_iterator<Range>::type iter_t;
         typedef iterator_range<iter_t> base;
 
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<Range>));
+
         dropped_range(Range& rng, diff_t n)
             : base(make_first_iterator(::boost::begin(rng),
                                        ::boost::end(rng),

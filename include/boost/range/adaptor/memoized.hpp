@@ -46,6 +46,8 @@ namespace range_detail {
         typedef typename memoized_range_result<Range>::type base;
         typedef typename iter_t::memo_type memo_t;
 
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<Range>));
+
         explicit memoized_range(Range& rng)
             : base(
                   iter_t(::boost::make_shared<memo_t>(::boost::begin(rng))),

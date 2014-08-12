@@ -42,7 +42,7 @@ void test()
     {
         BidirectionalContainer c = boost::assign::list_of(1)(2)(3);
         BOOST_TEST((c | optional_back).get() == 3);
-       
+
         boost::optional<int&> opt = c | optional_back;
         opt.get() = 0;
 
@@ -71,7 +71,7 @@ void test()
     {
         BidirectionalContainer c = boost::assign::list_of(1)(2)(3);
         BOOST_TEST(optional_back(c).get() == 3);
-       
+
         boost::optional<int&> opt = optional_back(c);
         opt.get() = 0;
 

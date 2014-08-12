@@ -68,6 +68,8 @@ namespace range_detail {
             >
         iter_t;
 
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRng>));
+
         typedef iterator_range<iter_t> base;
 
         taken_range(SinglePassRng& rng, diff_t n)

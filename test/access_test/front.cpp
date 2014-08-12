@@ -46,7 +46,7 @@ void test()
         SinglePassContainer c = boost::assign::list_of(1)(2)(3);
         BOOST_TEST((c | dropped(1) | optional_front).get() == 2);
         BOOST_TEST(!(c | dropped(3) | optional_front).is_initialized());
-        
+
         boost::optional<int&> opt = c | dropped(1) | optional_front;
         opt.get() = 0;
 
@@ -73,7 +73,7 @@ void test()
         SinglePassContainer c = boost::assign::list_of(1)(2)(3);
         BOOST_TEST(optional_front(c | dropped(1)).get() == 2);
         BOOST_TEST(!optional_front(c | dropped(3)).is_initialized());
-        
+
         boost::optional<int&> opt = optional_front(c | dropped(1));
         opt.get() = 0;
 

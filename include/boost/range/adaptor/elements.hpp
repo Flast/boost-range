@@ -11,6 +11,8 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 
 #include <boost/config.hpp>
+#include <boost/concept_check.hpp>
+#include <boost/range/concepts.hpp>
 #include <boost/fusion/include/at_c.hpp>
 #include <boost/fusion/include/at_key.hpp>
 #include <boost/type_traits/remove_reference.hpp>
@@ -26,6 +28,8 @@ namespace boost {
             typedef typename remove_reference<argument_type>::type element_type;
             typedef typename fusion::result_of::at_c<element_type, N>::type result_type;
 
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
+
             result_type operator()(argument_type r) const
             {
                 return fusion::at_c<N>(r);
@@ -37,6 +41,8 @@ namespace boost {
             typedef typename range_reference<SinglePassRange>::type argument_type;
             typedef typename remove_reference<argument_type>::type element_type;
             typedef typename fusion::result_of::at_key<element_type, Key>::type result_type;
+
+            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
 
             result_type operator()(argument_type r) const
             {

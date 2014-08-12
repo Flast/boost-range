@@ -38,14 +38,14 @@ namespace range_detail {
 
         typedef iterator_range<iter_t> base;
 
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<Range>));
+
         template <class UnaryPredicate>
         dropped_while_range(Range& rng, UnaryPredicate pred)
             : base(std::find_if(::boost::begin(rng), ::boost::end(rng),
                                 boost::adaptors::detail::not_(pred)),
                    ::boost::end(rng))
-        {
-            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<Range>));
-        }
+        { }
     };
 
     template< class T >

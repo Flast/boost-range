@@ -81,11 +81,12 @@ namespace range_detail {
 
         typedef iterator_range<iter_t> base;
 
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<Range>));
+
         taken_while_range(Range& rng, Predicate pred)
             : base(iter_t(::boost::begin(rng), ::boost::end(rng), read_then_pred_t(pred)),
                    iter_t(::boost::end(rng), ::boost::end(rng), read_then_pred_t(pred)))
         {
-            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<Range>));
         }
     };
 
@@ -97,7 +98,7 @@ namespace range_detail {
     };
 
     BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(taken_while_holder);
-    
+
     template< class SinglePassRng, class BinPredicate >
     inline taken_while_range<SinglePassRng, BinPredicate>
         operator|( SinglePassRng& r,

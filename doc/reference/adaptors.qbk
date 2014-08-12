@@ -40,7 +40,7 @@ boost::for_each(boost::iteration(1, boost::regular(_1 * 2)) | boost::adaptors::t
 ``
 
 regular is a functhon that adapt lambda expression to Regular Concept.
- 
+
 Whenever using lambda expression with iterator adaptors, we must write down regular function. But it is verbous. So, there is a syntax sugar for regular function in this library.
 
 ``

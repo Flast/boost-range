@@ -11,6 +11,8 @@
 #define BOOST_RANGE_ACCESS_BACK_INCLUDE
 
 #include <boost/config.hpp>
+#include <boost/concept_check.hpp>
+#include <boost/range/concepts.hpp>
 #include <boost/range/end.hpp>
 #include <boost/range/empty.hpp>
 #include <boost/range/reference.hpp>
@@ -117,6 +119,7 @@ namespace boost {
         typename range_reference<BidirectionalRange>::type
             operator|(BidirectionalRange& rng, const back_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((BidirectionalRangeConcept<BidirectionalRange>));
             return f(rng);
         }
 
@@ -124,6 +127,7 @@ namespace boost {
         typename range_reference<const BidirectionalRange>::type
             operator|(const BidirectionalRange& rng, const back_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((BidirectionalRangeConcept<BidirectionalRange>));
             return f(rng);
         }
 
@@ -131,6 +135,7 @@ namespace boost {
         typename range_value<BidirectionalRange>::type
             operator|(const BidirectionalRange& rng, const value_back_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((BidirectionalRangeConcept<BidirectionalRange>));
             return f(rng);
         }
 
@@ -138,6 +143,7 @@ namespace boost {
         boost::optional<typename range_reference<BidirectionalRange>::type>
             operator|(BidirectionalRange& rng, const optional_back_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((BidirectionalRangeConcept<BidirectionalRange>));
             return f(rng);
         }
 
@@ -145,6 +151,7 @@ namespace boost {
         boost::optional<typename range_reference<const BidirectionalRange>::type>
             operator|(const BidirectionalRange& rng, const optional_back_t& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((BidirectionalRangeConcept<BidirectionalRange>));
             return f(rng);
         }
 

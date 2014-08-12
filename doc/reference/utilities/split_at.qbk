@@ -28,6 +28,7 @@ typename split_at_result<const SinglePassRange>::type
 ``
 
 * [*Return:] `make_pair(rng | taken(n), rng | dropped(n));`
+* [*Range Category:] __single_pass_range__
 
 [h4 Example]
 ``

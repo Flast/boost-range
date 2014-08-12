@@ -10,6 +10,8 @@
 // http://www.boost.org/LICENSE_1_0.txt)
 
 #include "./detail/tap_iterator.hpp"
+#include <boost/concept_check.hpp>
+#include <boost/range/concepts.hpp>
 #include <boost/mpl/if.hpp>
 #include <boost/type_traits/is_const.hpp>
 #include <boost/range/adaptor/argument_fwd.hpp>
@@ -50,6 +52,8 @@ struct tapped_range : tapped_range_base<UnaryFunction, ForwardRng>::type {
     typedef typename base_traits::type base;
     typedef typename base_traits::base_range base_range;
     typedef typename base::iterator iterator;
+
+    BOOST_RANGE_CONCEPT_ASSERT((ForwardRangeConcept<ForwardRng>));
 
     tapped_range(UnaryFunction f, base_range rng)
         : base(iterator(f, boost::begin(rng), boost::end(rng)), iterator(boost::end(rng)))
