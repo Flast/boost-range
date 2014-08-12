@@ -21,8 +21,8 @@ namespace boost { namespace adaptors { namespace detail {
 template< class T1, class T2 >
 struct minimum_pure :
     boost::detail::minimum_category<
-        typename boost::detail::pure_traversal_tag<T1>::type,
-        typename boost::detail::pure_traversal_tag<T2>::type
+        typename boost::iterators::detail::pure_traversal_tag<T1>::type,
+        typename boost::iterators::detail::pure_traversal_tag<T2>::type
     >
 { };
 

@@ -11,6 +11,8 @@
 #define BOOST_RANGE_ACCESS_AT_INCLUDE
 
 #include <boost/config.hpp>
+#include <boost/concept_check.hpp>
+#include <boost/range/concepts.hpp>
 #include <boost/range/begin.hpp>
 #include <boost/range/reference.hpp>
 #include <boost/range/value_type.hpp>
@@ -235,6 +237,7 @@ namespace boost {
         typename range_reference<RandomAccessRange>::type
             operator|(RandomAccessRange& rng, const at_forwarder<Difference>& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((RandomAccessRangeConcept<RandomAccessRange>));
             return f(rng);
         }
 
@@ -242,6 +245,7 @@ namespace boost {
         typename range_reference<const RandomAccessRange>::type
             operator|(const RandomAccessRange& rng, const at_forwarder<Difference>& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((RandomAccessRangeConcept<RandomAccessRange>));
             return f(rng);
         }
 
@@ -249,6 +253,7 @@ namespace boost {
         typename range_value<RandomAccessRange>::type
             operator|(const RandomAccessRange& rng, const value_at_forwarder<Difference>& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((RandomAccessRangeConcept<RandomAccessRange>));
             return f(rng);
         }
 
@@ -256,6 +261,7 @@ namespace boost {
         boost::optional<typename range_reference<RandomAccessRange>::type>
             operator|(RandomAccessRange& rng, const optional_at_forwarder<Difference>& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((RandomAccessRangeConcept<RandomAccessRange>));
             return f(rng);
         }
 
@@ -263,6 +269,7 @@ namespace boost {
         boost::optional<typename range_reference<const RandomAccessRange>::type>
             operator|(const RandomAccessRange& rng, const optional_at_forwarder<Difference>& f)
         {
+            BOOST_RANGE_CONCEPT_ASSERT((RandomAccessRangeConcept<RandomAccessRange>));
             return f(rng);
         }
 

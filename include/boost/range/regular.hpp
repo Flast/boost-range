@@ -107,7 +107,7 @@ namespace result_of {
 
 template <class F>
 struct regular : boost::mpl::identity<
-                    detail::indirect_functor<regular_detail::regularized<F> >              
+                    detail::indirect_functor<regular_detail::regularized<F> >
                 > {};
 
 } // namespace result_of

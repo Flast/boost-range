@@ -35,11 +35,11 @@ namespace range_detail {
 
         typedef iterator_range<iter_t> base;
 
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRng>));
+
         outdirected_range(SinglePassRng& rng)
             : base(iter_t(::boost::begin(rng)), iter_t(::boost::end(rng)))
-        {
-            BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRng>));
-        }
+        { }
     };
 
     struct outdirect_forwarder {};

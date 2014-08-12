@@ -12,6 +12,8 @@
 
 #include <utility>
 #include <boost/config.hpp>
+#include <boost/concept_check.hpp>
+#include <boost/range/concepts.hpp>
 #include <boost/range/adaptor/taken.hpp>
 #include <boost/range/adaptor/dropped.hpp>
 
@@ -28,6 +30,8 @@ namespace range {
         typedef
             typename ::boost::dropped_range<SinglePassRange>
         dropped_type;
+
+        BOOST_RANGE_CONCEPT_ASSERT((SinglePassRangeConcept<SinglePassRange>));
 
     public:
         typedef std::pair<taken_type, dropped_type> type;

@@ -115,7 +115,7 @@ namespace boost {
             typename boost::range::detail::indirect_functor<F>::indirected_functor_type()
         >::type type;
     };
-    
+
     template <class F>
     struct tr1_result_of<const boost::range::detail::indirect_functor<F>()> {
         typedef typename boost::tr1_result_of<
