@@ -27,7 +27,8 @@
 <a name="range.upgrade.upgrade_from_1_55"></a><a class="link" href="upgrade_from_1_55.html" title="Upgrade from version 1.55">Upgrade from version
       1.55</a>
 </h3></div></div></div>
-<div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
             <a class="link" href="../reference/utilities/iterator_range.html" title="Class iterator_range"><code class="computeroutput"><span class="identifier">iterator_range</span></code></a> is now implemented
             by implementing the member functions <code class="computeroutput"><span class="identifier">size</span><span class="special">()</span></code>, <code class="computeroutput"><span class="keyword">operator</span><span class="special">[]</span></code> via inheritance of base-classes specialized
             by the traversal type of the underlying iterator. This is normally requires
@@ -37,7 +38,14 @@
             member functions such as <code class="computeroutput"><span class="identifier">size</span><span class="special">()</span></code> being present despite the underlying
             iterators not being random-access due to <code class="computeroutput"><span class="identifier">iterator_reference</span><span class="special">&lt;</span><span class="identifier">Iter</span><span class="special">&gt;::</span><span class="identifier">type</span></code>
             not being a reference. The suggested refactoring is to use <code class="computeroutput"><span class="identifier">boost</span><span class="special">::</span><span class="identifier">size</span><span class="special">(</span><span class="identifier">rng</span><span class="special">)</span></code>.
-          </li></ol></div>
+          </li>
+<li class="listitem">
+            The undocumented <a class="link" href="../reference/utilities/iterator_range.html" title="Class iterator_range"><code class="computeroutput"><span class="identifier">iterator_range</span></code></a> <code class="computeroutput"><span class="identifier">pop_front</span><span class="special">()</span></code>
+            has been deprecated and is replaced by <code class="computeroutput"><span class="identifier">drop_front</span><span class="special">().</span> <span class="identifier">Similarly</span>
+            </code>pop_back()<code class="computeroutput"> <span class="identifier">has</span> <span class="identifier">been</span> <span class="identifier">replaced</span>
+            <span class="identifier">by</span> </code>drop_back()`.
+          </li>
+</ol></div>
 </div>
 <table xmlns:rev="http://www.cs.rpi.edu/~gregod/boost/tools/doc/revision" width="100%"><tr>
 <td align="left"></td>

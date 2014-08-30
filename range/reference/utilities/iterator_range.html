@@ -99,6 +99,10 @@
         <span class="keyword">void</span>        <span class="identifier">drop_front</span><span class="special">();</span>
         <span class="keyword">void</span>        <span class="identifier">drop_front</span><span class="special">(</span><span class="identifier">difference_type</span> <span class="identifier">n</span><span class="special">);</span>
         <span class="keyword">bool</span>      <span class="identifier">empty</span><span class="special">()</span> <span class="keyword">const</span><span class="special">;</span>
+
+        <span class="identifier">iterator_range</span><span class="special">&amp;</span> <span class="identifier">advance_begin</span><span class="special">(</span><span class="identifier">difference_type</span> <span class="identifier">n</span><span class="special">);</span>
+        <span class="identifier">iterator_range</span><span class="special">&amp;</span> <span class="identifier">advance_end</span><span class="special">(</span><span class="identifier">difference_type</span> <span class="identifier">n</span><span class="special">);</span>
+
         <span class="comment">// for Bidirectional:</span>
         <span class="identifier">value_type</span><span class="special">&amp;</span> <span class="identifier">back</span><span class="special">()</span> <span class="keyword">const</span><span class="special">;</span>
         <span class="keyword">void</span> <span class="identifier">drop_back</span><span class="special">();</span>
