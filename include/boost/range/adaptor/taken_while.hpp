@@ -97,7 +97,7 @@ namespace range_detail {
         { }
     };
 
-    BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(taken_while_holder);
+    BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(taken_while_holder)
 
     template< class SinglePassRng, class BinPredicate >
     inline taken_while_range<SinglePassRng, BinPredicate>

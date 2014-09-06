@@ -76,7 +76,7 @@ namespace boost
             }
         };
 
-        BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(transform_holder);
+        BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(transform_holder)
 
         template< class SinglePassRange, class UnaryFunction >
         inline transformed_range<UnaryFunction,SinglePassRange>

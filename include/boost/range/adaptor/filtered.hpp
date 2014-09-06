@@ -58,7 +58,7 @@ namespace boost
             { }
         };
 
-        BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(filter_holder);
+        BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(filter_holder)
 
         template< class ForwardRange, class Predicate >
         inline filtered_range<Predicate, ForwardRange>

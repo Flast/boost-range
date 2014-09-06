@@ -55,7 +55,7 @@ namespace range_detail {
         { }
     };
 
-    BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(dropped_while_holder);
+    BOOST_RANGE_ADAPTOR_MAKE_REGULAR_OPERATOR(dropped_while_holder)
 
     template< class SinglePassRng, class UnaryPredicate >
     inline dropped_while_range<SinglePassRng>
