@@ -20,6 +20,14 @@
 
 # bring in rules for testing
 import testing ;
+import path ;
+import link ;
+
+local cwd = [ path.pwd ] ;
+
+# Create link to test directory at current working directory (cwd), because directory_range test
+# run and lookup under current working directory.
+explicit [ link-directory test-dir : directory_range_test_dir : <location>$(cwd) ] ;
 
 project
     : requirements
@@ -291,8 +299,9 @@ test-suite range_extension :
     [ range_ext-test access_test/back ]
     [ range_ext-test access_test/front ]
     [ range_ext-test algorithm_ext_test/fused_for_each ]
+    # Specify test-dir as a <dependency> due to notfile-target.
     [ run directory_range.cpp /boost/filesystem//boost_filesystem : :
-        : <toolset>gcc:<cxxflags>"-Wall -Wunused" ]
+        : <toolset>gcc:<cxxflags>"-Wall -Wunused" <dependency>test-dir ]
     [ range_ext-test iteration ]
     [ range_ext-test member_select_example ]
     [ range_ext-test regular ]
@@ -303,4 +312,3 @@ test-suite range_extension :
     [ range_ext-test split_at ]
 	[ range_ext-test as_container ]
     ;
-
