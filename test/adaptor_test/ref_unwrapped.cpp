@@ -8,16 +8,18 @@
 //
 // For more information, see http://www.boost.org/libs/range/
 //
+#include <boost/range/begin.hpp>
+#include <boost/range/end.hpp>
 #include <boost/range/adaptor/ref_unwrapped.hpp>
 
 #define BOOST_TEST_MAIN
 
 #include <boost/test/test_tools.hpp>
 #include <boost/test/unit_test.hpp>
+#include <boost/foreach.hpp>
 
 #include <vector>
-
-#if !defined(BOOST_NO_CXX11_AUTO_DECLARATIONS) && !defined(BOOST_NO_CXX11_RANGE_BASED_FOR)
+#include <functional>
 
 namespace boost
 {
@@ -28,12 +30,16 @@ namespace boost
         int two = 2;
         int three = 3;
 
-        std::vector<std::reference_wrapper<int>> input_values{one, two, three};
+        std::vector<std::reference_wrapper<int>> input_values;
+        input_values.push_back(std::ref(one));
+        input_values.push_back(std::ref(two));
+        input_values.push_back(std::ref(three));
 
-        const std::vector<int*> expected{&one, &two, &three};
+        int* _expected[] = {&one, &two, &three};
+        const std::vector<int*> expected(boost::begin(_expected), boost::end(_expected));
         std::vector<int*> actual;
 
-        for (auto&& value : input_values | adaptors::ref_unwrapped)
+        BOOST_FOREACH(int& value, input_values | adaptors::ref_unwrapped)
         {
           actual.push_back(&value);
         }
@@ -50,12 +56,17 @@ namespace boost
         int two = 2;
         int three = 3;
 
-        const std::vector<std::reference_wrapper<int>> input_values{one, two, three};
+        std::vector<std::reference_wrapper<int>> _input_values;
+        _input_values.push_back(std::ref(one));
+        _input_values.push_back(std::ref(two));
+        _input_values.push_back(std::ref(three));
+        const std::vector<std::reference_wrapper<int>> input_values = _input_values;
 
-        const std::vector<int*> expected{&one, &two, &three};
+        int* _expected[] = {&one, &two, &three};
+        const std::vector<int*> expected(boost::begin(_expected), boost::end(_expected));
         std::vector<int*> actual;
 
-        for (auto&& value : input_values | adaptors::ref_unwrapped)
+        BOOST_FOREACH(int& value, input_values | adaptors::ref_unwrapped)
         {
           actual.push_back(&value);
         }
@@ -72,12 +83,17 @@ namespace boost
         const int two = 2;
         const int three = 3;
 
-        const std::vector<std::reference_wrapper<const int>> input_values{one, two, three};
+        std::vector<std::reference_wrapper<const int>> _input_values;
+        _input_values.push_back(std::ref(one));
+        _input_values.push_back(std::ref(two));
+        _input_values.push_back(std::ref(three));
+        const std::vector<std::reference_wrapper<const int>> input_values = _input_values;
 
-        const std::vector<const int*> expected{&one, &two, &three};
+        const int* _expected[] = {&one, &two, &three};
+        const std::vector<const int*> expected(boost::begin(_expected), boost::end(_expected));
         std::vector<const int*> actual;
 
-        for (auto&& value : input_values | adaptors::ref_unwrapped)
+        BOOST_FOREACH(const int& value, input_values | adaptors::ref_unwrapped)
         {
           actual.push_back(&value);
         }
@@ -90,12 +106,3 @@ namespace boost
 
 
 }
-
-#else
-
-BOOST_AUTO_TEST_CASE(empty)
-{
-  // C++11 only
-}
-
-#endif

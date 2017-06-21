@@ -1,5 +1,6 @@
 // Boost.Range library
 //
+//  Copyright Kohei Takahashi 2017
 //  Copyright Robin Eckert 2015. Use, modification and distribution is
 //  subject to the Boost Software License, Version 1.0. (See
 //  accompanying file LICENSE_1_0.txt or copy at
@@ -10,8 +11,10 @@
 //
 //[ref_unwrapped_example
 #include <boost/range/adaptor/ref_unwrapped.hpp>
+#include <boost/foreach.hpp>
 #include <iostream>
 #include <vector>
+#include <functional>
 
 struct example
 {
@@ -20,28 +23,20 @@ struct example
 
 int main(int argc, const char* argv[])
 {
-//<-
-#if !defined(BOOST_NO_CXX11_DECLTYPE) \
- && !defined(BOOST_NO_CXX11_RANGE_BASED_FOR) \
- && !defined(BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX) \
- && !defined(BOOST_NO_CXX11_AUTO_DECLARATIONS)
-//->
     using boost::adaptors::ref_unwrapped;
 
-    example one{1};
-    example two{2};
-    example three{3};
+    example one = {1};
+    example two = {2};
+    example three = {3};
 
-    std::vector<std::reference_wrapper<example> > input{one, two, three};
+    std::vector<std::reference_wrapper<example> > input;
+    input.push_back(std::ref(one));
+    input.push_back(std::ref(two));
+    input.push_back(std::ref(three));
 
-    for (auto&& entry : input | ref_unwrapped)
+    BOOST_FOREACH(example& entry, input | ref_unwrapped)
     {
       std::cout << entry.value;
     }
-
-    return 0;
-//<-
-#endif
-//->
 }
 //]
