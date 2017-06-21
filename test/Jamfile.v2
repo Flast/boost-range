@@ -1,5 +1,6 @@
 # Boost.Range library
 #
+#  Copyright Kohei Takahashi 2017
 #  Copyright Neil Groves 2009
 #  Copyright Thorsten Ottosen 2003-2004. Use, modification and
 #  distribution is subject to the Boost Software License, Version
@@ -11,6 +12,7 @@
 
 # bring in rules for testing
 import testing ;
+import ../../config/checks/config : requires ;
 
 project
     : requirements
@@ -20,13 +22,13 @@ project
         <threading>multi
     ;
 
-rule range-test ( name : includes * )
+rule range-test ( name : includes * : requirements * )
 {
     return [
         run $(name).cpp /boost/test//boost_unit_test_framework /boost/regex//boost_regex/<link>static
         :
         :
-        : <toolset>gcc:<cxxflags>"-Wall -Wunused "
+        : <toolset>gcc:<cxxflags>"-Wall -Wunused " $(requirements)
         ] ;
 }
 
@@ -59,8 +61,8 @@ test-suite range :
     [ range-test adaptor_test/indexed ]
     [ range-test adaptor_test/indirected ]
     [ range-test adaptor_test/map ]
-    [ range-test adaptor_test/ref_unwrapped ]
-    [ range-test adaptor_test/ref_unwrapped_example ]
+    [ range-test adaptor_test/ref_unwrapped : : [ requires cxx11_decltype ] ]
+    [ range-test adaptor_test/ref_unwrapped_example : : [ requires cxx11_decltype ] ]
     [ range-test adaptor_test/replaced ]
     [ range-test adaptor_test/replaced_if ]
     [ range-test adaptor_test/reversed ]

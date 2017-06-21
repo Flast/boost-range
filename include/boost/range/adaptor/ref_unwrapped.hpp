@@ -1,5 +1,6 @@
 // Boost.Range library
 //
+//  Copyright Kohei Takahashi 2017
 //  Copyright Robin Eckert 2015.
 //  Copyright Thorsten Ottosen, Neil Groves 2006 - 2008. Use, modification and
 //  distribution is subject to the Boost Software License, Version
@@ -12,13 +13,15 @@
 #ifndef BOOST_RANGE_ADAPTOR_REF_UNWRAPPED_HPP
 #define BOOST_RANGE_ADAPTOR_REF_UNWRAPPED_HPP
 
+#include <boost/config.hpp>
+
+#if !defined(BOOST_NO_CXX11_DECLTYPE)
+
 #include <boost/range/adaptor/transformed.hpp>
 #include <boost/range/reference.hpp>
 #include <boost/range/concepts.hpp>
 
 #include <utility>
-
-#if !defined(BOOST_NO_CXX11_DECLTYPE)
 
 namespace boost
 {
@@ -32,7 +35,7 @@ namespace boost
             typedef BOOST_DEDUCED_TYPENAME
                           range_reference<SinglePassRange>::type argument_type;
 
-            using result_type = decltype(std::declval<argument_type>().get() );
+            typedef decltype(std::declval<argument_type>().get()) result_type;
 
             result_type operator()( argument_type &&r ) const
             {
@@ -46,11 +49,12 @@ namespace boost
             : public transformed_range<unwrap_ref<SinglePassRange>,
                                        SinglePassRange>
         {
-            using base = transformed_range<unwrap_ref<SinglePassRange>,
-                                           SinglePassRange>;
+            typedef
+                transformed_range<unwrap_ref<SinglePassRange>, SinglePassRange>
+            base;
         public:
-            using transform_fn_type = unwrap_ref<SinglePassRange>;
-            using source_range_type = SinglePassRange;
+            typedef unwrap_ref<SinglePassRange> transform_fn_type;
+            typedef SinglePassRange source_range_type;
 
             unwrap_ref_range(transform_fn_type fn, source_range_type &rng)
                 : base(fn, rng)
