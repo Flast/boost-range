@@ -23,6 +23,9 @@
 
 #include <utility>
 
+// MSVC 2010 has no std::declval.
+#include <boost/type_traits/declval.hpp>
+
 namespace boost
 {
     namespace range_detail
@@ -35,7 +38,7 @@ namespace boost
             typedef BOOST_DEDUCED_TYPENAME
                           range_reference<SinglePassRange>::type argument_type;
 
-            typedef decltype(std::declval<argument_type>().get()) result_type;
+            typedef decltype(boost::declval<argument_type>().get()) result_type;
 
             result_type operator()( argument_type &&r ) const
             {
